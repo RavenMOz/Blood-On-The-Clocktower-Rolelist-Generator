@@ -1,5 +1,4 @@
- 
-import java.util.*;
+ import java.util.*;
 
 import javax.swing.JOptionPane;
 
@@ -10,7 +9,9 @@ public static void main(String[] args) {
         String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
         String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
         int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
-        String[] rolelist = choosing(townfolk, outsider, minion, demon, jinx_num);
+        //Some roles may not work with pref_roles
+        String pref_roles = u_choose("What roles would you like in the game?[Try to spell them correctly and have each role have a ', ' between roles, or 'none' for no preference]");
+        String[] rolelist = choosing(townfolk, outsider, minion, demon, jinx_num, pref_roles);
         
         for(String list:rolelist ) {
             System.out.println(list);
@@ -18,6 +19,14 @@ public static void main(String[] args) {
     }
 
     
+
+    private static String u_choose(String prompt) {
+    String nss = JOptionPane.showInputDialog(null,prompt+"?");
+        Scanner scanner = new Scanner(nss);
+        return scanner.next();
+    }
+
+
 
     private static int jinx_max(String prompt) {
         String nss = JOptionPane.showInputDialog(null,prompt+"?");
@@ -27,10 +36,15 @@ public static void main(String[] args) {
 
 
 
-    private static String[] choosing(String[] townfolk, String[] outsider, String[] minion, String[] demon, int jinx_num) {
+    private static String[] choosing(String[] townfolk, String[] outsider, String[] minion, String[] demon, int jinx_num, String pref_roles) {
         boolean it_works;
         int random = ( int ) (Math.random()*4 + 1);
         String[] makeList = new String[21 + random];
+        int comma_count = (int) pref_roles.chars().filter(ch -> ch == ',').count();
+        String[] pref_roles_list = new String[comma_count];
+        if (pref_roles != "none") {
+            pref_roles_list = pref_roles.split(", ");
+        }
         while (it_works = true){
             Collections.shuffle(Arrays.asList(townfolk));
             Collections.shuffle(Arrays.asList(outsider));
@@ -470,7 +484,21 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-        break;  
+            if (pref_roles == "none"){
+                it_works = true;
+            }
+            int pref_roles_check = 0;
+            if (!(pref_roles == "none")){
+                for (int i = 0; i < pref_roles_list.length; i = i + 1){
+                    if(checkList.contains(pref_roles_list[i])){
+                        pref_roles_check = pref_roles_check + 1;
+                    }
+                }
+            }
+            if(!(pref_roles_check == pref_roles_list.length)){
+                continue;
+            }
+            break;  
         }
         return makeList;
     }
