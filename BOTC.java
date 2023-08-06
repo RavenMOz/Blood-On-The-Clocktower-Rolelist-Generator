@@ -1,4 +1,5 @@
- import java.util.*;
+import java.lang.reflect.Array;
+import java.util.*;
 
 import javax.swing.JOptionPane;
 
@@ -9,23 +10,72 @@ public static void main(String[] args) {
         String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
         String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
         int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
-        //Some roles may not work with pref_roles
-        String pref_roles = u_choose("What roles would you like in the game?[Try to spell them correctly and have each role have a ', ' between roles, or 'none' for no preference]");
-        String[] rolelist = choosing(townfolk, outsider, minion, demon, jinx_num, pref_roles);
+        ArrayList<String> TF_pref = getTFPref();
+        ArrayList<String> O_pref = getOPref();
+        ArrayList<String> M_pref = getMPref();
+        ArrayList<String> D_pref = getDPref();
+        String[] rolelist = choosing(townfolk, outsider, minion, demon, jinx_num, TF_pref, O_pref, M_pref, D_pref);
         
         for(String list:rolelist ) {
             System.out.println(list);
         }
     }
 
-    
+    public static ArrayList<String> getTFPref() {
+        ArrayList<String> arrayList = new ArrayList<>();
 
-    private static String u_choose(String prompt) {
-    String nss = JOptionPane.showInputDialog(null,prompt+"?");
-        Scanner scanner = new Scanner(nss);
-        return scanner.next();
+        while (true) {
+            String input = JOptionPane.showInputDialog("Enter preferred Townfolks[spell correctly and capitalized first letter] (type 'exit' to stop):");
+            if (input == null || input.equalsIgnoreCase("exit")) {
+                break;
+            }
+            arrayList.add(input);
+        }
+
+        return arrayList;
     }
 
+    public static ArrayList<String> getOPref() {
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        while (true) {
+            String input = JOptionPane.showInputDialog("Enter preferred Outsiders[spell correctly and capitalized first letter] (type 'exit' to stop):");
+            if (input == null || input.equalsIgnoreCase("exit")) {
+                break;
+            }
+            arrayList.add(input);
+        }
+
+        return arrayList;
+    }
+
+    public static ArrayList<String> getMPref() {
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        while (true) {
+            String input = JOptionPane.showInputDialog("Enter preferred Minions[spell correctly and capitalized first letter] (type 'exit' to stop):");
+            if (input == null || input.equalsIgnoreCase("exit")) {
+                break;
+            }
+            arrayList.add(input);
+        }
+
+        return arrayList;
+    }
+
+    public static ArrayList<String> getDPref() {
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        while (true) {
+            String input = JOptionPane.showInputDialog("Enter preferred Demons[spell correctly and capitalized first letter] (type 'exit' to stop):");
+            if (input == null || input.equalsIgnoreCase("exit")) {
+                break;
+            }
+            arrayList.add(input);
+        }
+
+        return arrayList;
+    }
 
 
     private static int jinx_max(String prompt) {
@@ -36,47 +86,78 @@ public static void main(String[] args) {
 
 
 
-    private static String[] choosing(String[] townfolk, String[] outsider, String[] minion, String[] demon, int jinx_num, String pref_roles) {
+    private static String[] choosing(String[] townfolk, String[] outsider, String[] minion, String[] demon, int jinx_num, ArrayList<String> TF_pref, ArrayList<String> O_pref, ArrayList<String> M_pref, ArrayList<String> D_pref) {
         boolean it_works;
         int random = ( int ) (Math.random()*4 + 1);
         String[] makeList = new String[21 + random];
-        int comma_count = (int) pref_roles.chars().filter(ch -> ch == ',').count();
-        String[] pref_roles_list = new String[comma_count];
-        if (pref_roles != "none") {
-            pref_roles_list = pref_roles.split(", ");
-        }
+        String[] townfolk_temp = new String[13];
+        String[] outsider_temp = new String[4];
+        String[] minion_temp = new String[4];
+        String[] demon_temp = new String[random];
         while (it_works = true){
             Collections.shuffle(Arrays.asList(townfolk));
             Collections.shuffle(Arrays.asList(outsider));
             Collections.shuffle(Arrays.asList(minion));
             Collections.shuffle(Arrays.asList(demon));
             for (int a = 0; a < 13; a = a + 1){
-                makeList[a] = townfolk[a];
+                townfolk_temp[a] = townfolk[a];
             }
-            for (int b = 13; b < 17; b = b + 1){
-                makeList[b] = outsider[b - 13];
+            for (int b = 0; b < 4; b = b + 1){
+                outsider_temp[b] = outsider[b];
             }
-            for (int c = 17; c < 21; c = c + 1){
-                makeList[c] = minion[c - 17];
+            for (int c = 0; c < 4; c = c + 1){
+                minion_temp[c] = minion[c];
             }
-            for (int d = 21; d < 21 + random; d = d + 1){
-                makeList[d] = demon[d - 21];
+            for (int d = 0; d < random; d = d + 1){
+                demon_temp[d] = demon[d];
+            }
+            for (int i = 0; i < TF_pref.size(); i = i + 1){
+                if (Arrays.asList(townfolk).contains(TF_pref.get(i))){
+                    continue;
+                }
+            }
+            for (int i = 0; i < O_pref.size(); i = i + 1){
+                if (Arrays.asList(outsider).contains(O_pref.get(i))){
+                    continue;
+                }
+            }
+            for (int i = 0; i < M_pref.size(); i = i + 1){
+                if (Arrays.asList(minion).contains(M_pref.get(i))){
+                    continue;
+                }
+            }
+            for (int i = 0; i < D_pref.size(); i = i + 1){
+                if (Arrays.asList(demon).contains(D_pref.get(i))){
+                    continue;
+                }
+            }
+            for (int i = 0; i < TF_pref.size(); i = i + 1){
+                townfolk_temp[i] = TF_pref.get(i);
+            }
+            for (int i = 0; i < O_pref.size(); i = i + 1){
+                outsider_temp[i] = O_pref.get(i);
+            }
+            for (int i = 0; i < M_pref.size(); i = i + 1){
+                minion_temp[i] = M_pref.get(i);
+            }
+            for (int i = 0; i < D_pref.size(); i = i + 1){
+                demon_temp[i] = D_pref.get(i);
             }
             String[] organizedtownfolk = new String[13];
             String[] organizedoutsider = new String[4];
             String[] organizedminion = new String[4];
             String[] organizeddemon = new String[random];
             for (int a = 0; a < 13; a = a + 1){
-                organizedtownfolk[a] = makeList[a];
+                organizedtownfolk[a] = townfolk_temp[a];
             }
-            for (int b = 13; b < 17; b = b + 1){
-                organizedoutsider[b - 13] = makeList[b];
+            for (int b = 0; b < 4; b = b + 1){
+                organizedoutsider[b] = outsider_temp[b];
             }
-            for (int c = 17; c < 21; c = c + 1){
-                organizedminion[c - 17] = makeList[c];
+            for (int c = 0; c < 4; c = c + 1){
+                organizedminion[c] = minion_temp[c];
             }
-            for (int d = 21; d < 21 + random; d = d + 1){
-                organizeddemon[d - 21] = makeList[d];
+            for (int d = 0; d < random; d = d + 1){
+                organizeddemon[d] = demon_temp[d];
             }
             Arrays.sort(organizedtownfolk);
             Arrays.sort(organizedoutsider);
@@ -484,21 +565,7 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-            if (pref_roles == "none"){
-                it_works = true;
-            }
-            int pref_roles_check = 0;
-            if (!(pref_roles == "none")){
-                for (int i = 0; i < pref_roles_list.length; i = i + 1){
-                    if(checkList.contains(pref_roles_list[i])){
-                        pref_roles_check = pref_roles_check + 1;
-                    }
-                }
-            }
-            if(!(pref_roles_check == pref_roles_list.length)){
-                continue;
-            }
-            break;  
+        break;  
         }
         return makeList;
     }
@@ -597,4 +664,4 @@ public static void main(String[] args) {
 }
     
 
-//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle for helping me out with the code
+//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo and pokesvorlds for helping me out with the code
