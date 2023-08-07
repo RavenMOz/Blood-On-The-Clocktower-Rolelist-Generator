@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.*;
 
 import javax.swing.JOptionPane;
@@ -112,22 +111,22 @@ public static void main(String[] args) {
                 demon_temp[d] = demon[d];
             }
             for (int i = 0; i < TF_pref.size(); i = i + 1){
-                if (Arrays.asList(townfolk).contains(TF_pref.get(i))){
+                if (Arrays.asList(townfolk_temp).contains(TF_pref.get(i))){
                     continue;
                 }
             }
             for (int i = 0; i < O_pref.size(); i = i + 1){
-                if (Arrays.asList(outsider).contains(O_pref.get(i))){
+                if (Arrays.asList(outsider_temp).contains(O_pref.get(i))){
                     continue;
                 }
             }
             for (int i = 0; i < M_pref.size(); i = i + 1){
-                if (Arrays.asList(minion).contains(M_pref.get(i))){
+                if (Arrays.asList(minion_temp).contains(M_pref.get(i))){
                     continue;
                 }
             }
             for (int i = 0; i < D_pref.size(); i = i + 1){
-                if (Arrays.asList(demon).contains(D_pref.get(i))){
+                if (Arrays.asList(demon_temp).contains(D_pref.get(i))){
                     continue;
                 }
             }
