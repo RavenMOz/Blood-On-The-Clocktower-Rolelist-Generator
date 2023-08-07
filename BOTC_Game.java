@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.logging.Level;
 
 import javax.swing.JOptionPane;
 
@@ -29,7 +30,10 @@ public class BOTC_Game {
 
 	public void run() {
 		promptUserBeforeChoosing();
-		generateRoles();
+		String[] roles = generateRoles();
+		for (String s : roles) {
+			System.out.println(s);
+		}
 	}
 
 	private void preload() {
@@ -74,12 +78,10 @@ public class BOTC_Game {
 	}
 
 	private void promptAndToList(BOTC_Constants.METADATA category, List<String> list) {
-		while (true) {
-			String input = JOptionPane.showInputDialog(gamePrompts.get(category));
-			if (input == null || input.equalsIgnoreCase("exit")) {
-				break;
-			}
+		String input = JOptionPane.showInputDialog(gamePrompts.get(category));
+		while (input != null && !input.equalsIgnoreCase("exit")) {
 			list.add(input);
+			input = JOptionPane.showInputDialog(gamePrompts.get(category));
 		}
 	}
 
@@ -119,7 +121,7 @@ public class BOTC_Game {
 	}
 
 	private String[] generateRoles() {
-		boolean it_works;
+		boolean it_works = false;
 		int random = (int) (Math.random() * 4 + 1);
 		String[] makeList = new String[21 + random];
 		String[] townfolk_temp = new String[13];
@@ -127,7 +129,8 @@ public class BOTC_Game {
 		String[] minion_temp = new String[4];
 		String[] demon_temp = new String[random];
 
-		while (it_works = true) {
+		while (!it_works) {
+			print("Generating the list...");
 			Collections.shuffle(townFolks);
 			Collections.shuffle(outsiders);
 			Collections.shuffle(minions);
@@ -145,23 +148,23 @@ public class BOTC_Game {
 				demon_temp[d] = demons.get(d).getValue();
 			}
 ////////////////// What is the purpose of below for loops?? //////////////////////
-			for (int i = 0; i < townFolkPreferences.size(); i = i + 1) {
-				if (townFolks.contains(townFolkPreferences.get(i))) {
+			for (int i = 0; i < townFolks.size(); i = i + 1) {
+				if (townFolkPreferences.contains(townFolks.get(i).getValue())) {
 					continue;
 				}
 			}
-			for (int i = 0; i < outsiderPreferences.size(); i = i + 1) {
-				if (outsiders.contains(outsiderPreferences.get(i))) {
+			for (int i = 0; i < outsiders.size(); i = i + 1) {
+				if (outsiderPreferences.contains(outsiders.get(i).getValue())) {
 					continue;
 				}
 			}
-			for (int i = 0; i < minionPreferences.size(); i = i + 1) {
-				if (minions.contains(minionPreferences.get(i))) {
+			for (int i = 0; i < minions.size(); i = i + 1) {
+				if (minionPreferences.contains(minions.get(i).getValue())) {
 					continue;
 				}
 			}
-			for (int i = 0; i < demonPreferences.size(); i = i + 1) {
-				if (demons.contains(demonPreferences.get(i))) {
+			for (int i = 0; i < demons.size(); i = i + 1) {
+				if (demonPreferences.contains(demons.get(i).getValue())) {
 					continue;
 				}
 			}
@@ -739,6 +742,10 @@ public class BOTC_Game {
 			break;
 		}
 		return makeList;
+	}
+
+	private void print(String text) {
+		System.out.printf("%s ---- %s\n", Level.INFO, text);
 	}
 
 }

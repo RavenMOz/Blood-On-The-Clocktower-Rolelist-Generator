@@ -53,6 +53,7 @@ public class BOTC_Constants {
 		public String getValue() {
 			return value;
 		}
+		
 	}
 
 	public static enum MINIONS {
