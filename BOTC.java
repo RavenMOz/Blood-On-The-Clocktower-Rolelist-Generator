@@ -508,7 +508,7 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-            // At least 1 of {Vizier, Harpy, Psychopath, Zombuul, Tea Lady}
+            // At least 1 of {Vizier, Harpy, Psychopath}  requires at least 1 of {Fool, Sailor, Devil's Advocate, Zombuul, Tea Lady}
             if (checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Psychopath")) {
                 if (checkList.contains("Fool") || checkList.contains("Sailor") || checkList.contains("Devil's Advocate") || checkList.contains("Zombuul") || checkList.contains("Tea Lady")){
                     it_works = true;
