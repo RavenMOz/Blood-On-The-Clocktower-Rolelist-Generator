@@ -354,9 +354,9 @@ public static void main(String[] args) {
             if (checkList.contains("Magician") && (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Vortox"))) {
                 continue;
             }
-            //If Leviathan is with at least one of {Assassin, Godfather}, then it requires at least 1 of {Tinker, Gambler, Lycanthrope, Acrobat, Grandmother}
+            //If Leviathan is with at least one of {Assassin, Godfather}, then it requires at least 1 of {Tinker, Gambler, Lycanthrope, Acrobat, Grandmother, Moonchild}
             if (checkList.contains("Leviathan") && (checkList.contains("Assassin") || checkList.contains("Godfather"))) {
-                if (checkList.contains("Tinker") || checkList.contains("Gambler") || checkList.contains("Lycanthrope") || checkList.contains("Acrobat") || checkList.contains("Grandmother")) {
+                if (checkList.contains("Tinker") || checkList.contains("Gambler") || checkList.contains("Lycanthrope") || checkList.contains("Acrobat") || checkList.contains("Grandmother") || checkList.contains("Moonchild")) {
                     it_works = true;
                 } else {
                     continue;
@@ -405,9 +405,9 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-            // At least 1 of {Po, Shabaloth} requires at least 1 {Tinker, Gossip, Gambler, Acrobat, Grandmother}
+            // At least 1 of {Po, Shabaloth} requires at least 1 {Tinker, Gossip, Gambler, Acrobat, Grandmother, Moonchild}
             if (checkList.contains("Po") || checkList.contains("Shabaloth")) {
-                if (checkList.contains("Tinker") || checkList.contains("Gossip") || checkList.contains("Pit-Hag") || checkList.contains("Gambler") || checkList.contains("Acrobat") || checkList.contains("Grandmother")) {
+                if (checkList.contains("Tinker") || checkList.contains("Gossip") || checkList.contains("Pit-Hag") || checkList.contains("Gambler") || checkList.contains("Acrobat") || checkList.contains("Grandmother") || checkList.contains("Moonchild")) {
                     it_works = true;
                 } else {
                     continue;
