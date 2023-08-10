@@ -364,15 +364,15 @@ public static void main(String[] args) {
             }
             //Snitch requires at least 1 of {Poppy Grower, Lil' Monsta}
             if (checkList.contains("Snitch")) {
-                if (checkList.contains("Poppy Grower") || checkList.contains("' Monsta")) {
+                if (checkList.contains("Poppy Grower") || checkList.contains("Lil' Monsta")) {
                     it_works = true;
                 } else {
                     continue;
                 }
             }
-            //Poppy Grower requires at least 1 of {Legion, Riot, Organ Grinder, Vizier, Harpy, Fearmonger}
+            //Poppy Grower requires at least 1 of {Legion, Fearmonger, Riot, Organ Grinder, Vizier, Harpy, Fearmonger}
             if (checkList.contains("Poppy Grower")) {
-                if (checkList.contains("Legion") || checkList.contains("Riot") || checkList.contains("Organ Grinder") || checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Fearmonger")) {
+                if (checkList.contains("Legion") || checkList.contains("Fearmonger") || checkList.contains("Riot") || checkList.contains("Organ Grinder") || checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Fearmonger")) {
                     it_works = true;
                 } else {
                     continue;
@@ -392,6 +392,14 @@ public static void main(String[] args) {
             }
             if (checkList.contains("Sage") || checkList.contains("Ravenkeeper") || checkList.contains("Farmer")) {
                 if (checkList.contains("Imp") || checkList.contains("Fang Gu")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //At least 1 of {Mezepheles, Cult Leader, Fang Gu, Goon} reuires at least 1 of {Empath, Oracle, Seamstress}
+            if (checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Fang Gu") || checkList.contains("Goon")) {
+                if (checkList.contains("Empath") || checkList.contains("Oracle") || checkList.contains("Seamstress")) {
                     it_works = true;
                 } else {
                     continue;
