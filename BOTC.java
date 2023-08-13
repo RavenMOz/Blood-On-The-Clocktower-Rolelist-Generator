@@ -539,6 +539,14 @@ public static void main(String[] args) {
                     continue;
                 }
             }
+            //Harpy requires Al-Hadikhia
+            if (checkList.contains("Harpy")) {
+                if (checkList.contains("Al-Hadikhia")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons
             int NonLoudDemon = 0;
             if (checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) {
