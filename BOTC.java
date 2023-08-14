@@ -413,8 +413,8 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-            //Poppy Grower and at least 1 of {Al-Hadikhia, Fang Gu, Imp, Leviathan, Lil' Monsta, Lleech, No Dashii, Po, Pukka, Shabaloth, Vigormortis, Vortox}
-            if (checkList.contains("Poppy Grower") && (checkList.contains("Al-Hadikhia") || checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Leviathan") || checkList.contains("Lil' Monsta") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Po") || checkList.contains("Pukka") || checkList.contains("Shabaloth") || checkList.contains("Vigormortis") || checkList.contains("Vortox"))) {
+            //Poppy Grower and at least 1 of {Al-Hadikhia, Fang Gu, Imp, Leviathan, Lil' Monsta, Lleech, No Dashii, Po, Pukka, Shabaloth, Vigormortis}
+            if (checkList.contains("Poppy Grower") && (checkList.contains("Al-Hadikhia") || checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Leviathan") || checkList.contains("Lil' Monsta") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Po") || checkList.contains("Pukka") || checkList.contains("Shabaloth") || checkList.contains("Vigormortis"))) {
                 if (checkList.contains("Scarlett Woman")) {
                     it_works = true;
                 } else {
@@ -460,6 +460,14 @@ public static void main(String[] args) {
             if (checkList.contains("Balloonist")){
                 if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch")){
                     it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Al-Hadikhia requires Professor and at least 1 of {Fool, Monk, Sailor, Soldier, Tea Lady, Goon} and at least 1 of {Gambler, Gossip, Mayor, Moonchild, Tinker, Assassin and Godfather}
+            if(checkList.contains("Al-Hadikhia")){
+                if (checkList.contains("Professor") && (checkList.contains("Fool") || checkList.contains("Monk") || checkList.contains("Sailor") || checkList.contains("Soldier") || checkList.contains("Tea Lady") || checkList.contains("Goon")) && (checkList.contains("Gambler") || checkList.contains("Gossip") || checkList.contains("Mayor") || checkList.contains("Moonchild") || checkList.contains("Tinker") || checkList.contains("Assassin") || checkList.contains("Godfather"))){
+
                 } else {
                     continue;
                 }
