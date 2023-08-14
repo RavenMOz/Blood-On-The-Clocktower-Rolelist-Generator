@@ -549,7 +549,7 @@ public static void main(String[] args) {
             }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons
             int NonLoudDemon = 0;
-            if (checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) {
+            if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
                 List<String> temp = checkList;
                 String[] NotLoudDemon = {"Fang Gu", "Imp", "Lil' Monsta", "Lleech", "No Dashii", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
                 for(int j = 0; j < NotLoudDemon.length; j = j + 1){
