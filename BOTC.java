@@ -467,7 +467,6 @@ public static void main(String[] args) {
             //Al-Hadikhia requires Professor and at least 1 of {Fool, Monk, Sailor, Soldier, Tea Lady, Goon} and at least 1 of {Gambler, Gossip, Mayor, Moonchild, Tinker, Assassin and Godfather}
             if(checkList.contains("Al-Hadikhia")){
                 if (checkList.contains("Professor") && (checkList.contains("Fool") || checkList.contains("Monk") || checkList.contains("Sailor") || checkList.contains("Soldier") || checkList.contains("Tea Lady") || checkList.contains("Goon")) && (checkList.contains("Gambler") || checkList.contains("Gossip") || checkList.contains("Mayor") || checkList.contains("Moonchild") || checkList.contains("Tinker") || checkList.contains("Assassin") || checkList.contains("Godfather"))){
-
                 } else {
                     continue;
                 }
@@ -524,8 +523,8 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-            // At least 1 of {Vizier, Harpy, Psychopath}  requires at least 1 of {Fool, Sailor, Devil's Advocate, Zombuul, Tea Lady}
-            if (checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Psychopath")) {
+            // At least 1 of {Vizier, Harpy, Psychopath, Riot}  requires at least 1 of {Fool, Sailor, Devil's Advocate, Zombuul, Tea Lady}
+            if (checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Psychopath") || checkList.contains("Riot")) {
                 if (checkList.contains("Fool") || checkList.contains("Sailor") || checkList.contains("Devil's Advocate") || checkList.contains("Zombuul") || checkList.contains("Tea Lady")){
                     it_works = true;
                 } else {
@@ -555,7 +554,7 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-            //If there's at least 1 loud demon, there needs to be at least 2 quiet demons
+            //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
                 List<String> temp = checkList;
@@ -570,6 +569,7 @@ public static void main(String[] args) {
                     continue;
                 }
             }
+            //Jinx Cases
             int foundedjinxes = 0;
             String[][] jinxes = jinxlist();
             for(int i = 0; i < jinxes.length; i = i + 1) {
