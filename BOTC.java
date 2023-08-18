@@ -554,6 +554,14 @@ public static void main(String[] args) {
                     continue;
                 }
             }
+            //Harpy requires at least 1 of {Bounty Hunter, Cult Leader, Dreamer, Empath, Flowergirl, Fortune Teller, Gambler, Investigator, Juggler, Noble, Pixie, Sage, Seamstress, Town Crier, Tea Lady, Undertaker, Virgin, Moonchild, Puzzlemaster}
+            if (checkList.contains("Harpy")) {
+                if (checkList.contains("Bounty Hunter") || checkList.contains("Cult Leader") || checkList.contains("Dreamer") || checkList.contains("Empath") || checkList.contains("Flowergirl") || checkList.contains("Fortune Teller") || checkList.contains("Gambler") || checkList.contains("Investigator") || checkList.contains("Juggler") || checkList.contains("Noble") || checkList.contains("Pixie") || checkList.contains("Sage") || checkList.contains("Seamstress") || checkList.contains("Town Crier") || checkList.contains("Tea Lady") || checkList.contains("Undertaker") || checkList.contains("Virgin") || checkList.contains("Moonchild") || checkList.contains("Puzzlemasterer")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
