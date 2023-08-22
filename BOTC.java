@@ -342,6 +342,21 @@ public static void main(String[] args) {
                     continue;
                 }
             }
+            //Lil' Monsta requires Legion and vice versa
+            if (checkList.contains("Lil' Monsta")) {
+                if (checkList.contains("Legion")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Legion")) {
+                if (checkList.contains("Lil' Monsta")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //Lil' Monsta requires at least 1 of {Imp, Barber, Snake Charmer, Fang Gu}
             if (checkList.contains("Lil' Monsta")) {
                 if (checkList.contains("Imp") || checkList.contains("Barber")  || checkList.contains("Snake Charmer") || checkList.contains("Fang Gu")) {
