@@ -585,6 +585,21 @@ public static void main(String[] args) {
                     continue;
                 }
             }
+            //Plague Doctor requires at least 1 of {Marionette, at least 1 of {Bounty Hunter, Mezepheles, Cult Leader, Goon}} but not both
+            if (checkList.contains("Plague Doctor") && (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") && checkList.contains("Goon"))) {
+                if (checkList.contains("Marionette")){
+                    continue;
+                } else {
+                    it_works = true;
+                }
+            }
+            if (checkList.contains("Plague Doctor") && checkList.contains("Marionette")) {
+                if (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") && checkList.contains("Goon")) {
+                    continue;
+                } else {
+                    it_works = true;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
