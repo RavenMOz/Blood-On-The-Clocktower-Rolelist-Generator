@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class BOTC{
 public static void main(String[] args) {
         String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Virgin", "Washerwoman"};
-        String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
+        String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
         String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
         String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
         int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
@@ -471,9 +471,9 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-            //Balloonist requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Politician, Recluse, Snitch}
+            //Balloonist requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Plague Doctor, Politician, Recluse, Snitch}
             if (checkList.contains("Balloonist")){
-                if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch")){
+                if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch")){
                     it_works = true;
                 } else {
                     continue;
@@ -572,6 +572,14 @@ public static void main(String[] args) {
             //Harpy requires at least 1 of {Bounty Hunter, Cult Leader, Dreamer, Empath, Flowergirl, Fortune Teller, Gambler, Investigator, Juggler, Noble, Pixie, Sage, Seamstress, Town Crier, Tea Lady, Undertaker, Virgin, Moonchild, Puzzlemaster}
             if (checkList.contains("Harpy")) {
                 if (checkList.contains("Bounty Hunter") || checkList.contains("Cult Leader") || checkList.contains("Dreamer") || checkList.contains("Empath") || checkList.contains("Flowergirl") || checkList.contains("Fortune Teller") || checkList.contains("Gambler") || checkList.contains("Investigator") || checkList.contains("Juggler") || checkList.contains("Noble") || checkList.contains("Pixie") || checkList.contains("Sage") || checkList.contains("Seamstress") || checkList.contains("Town Crier") || checkList.contains("Tea Lady") || checkList.contains("Undertaker") || checkList.contains("Virgin") || checkList.contains("Moonchild") || checkList.contains("Puzzlemasterer")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Plague Doctor requires at least 1 of {Lil' Monsta, Legion, Riot, Alchemist}
+            if (checkList.contains("Plague Doctor")) {
+                if (checkList.contains("Lil' Monsta") || checkList.contains("Legion") || checkList.contains("Riot") || checkList.contains("Alchemist")){
                     it_works = true;
                 } else {
                     continue;
@@ -702,7 +710,16 @@ public static void main(String[] args) {
         {"Riot", "Butler"},
         {"Riot", "Golem"},
         {"Riot", "Saint"},
-        {"Riot", "Snitch"}};
+        {"Riot", "Snitch"},
+        {"Plague Doctor", "Baron"},
+        {"Plague Doctor", "Boomdandy"},
+        {"Plague Doctor", "Evil Twin"},
+        {"Plague Doctor", "Fearmonger"},
+        {"Plague Doctor", "Goblin"},
+        {"Plague Doctor", "Marionette"},
+        {"Plague Doctor", "Scarlet Woman"},
+        {"Plague Doctor", "Spy"},
+        };
 
         return jinxcases;
     
