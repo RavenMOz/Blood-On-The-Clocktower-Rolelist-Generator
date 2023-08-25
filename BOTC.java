@@ -579,7 +579,7 @@ public static void main(String[] args) {
             }
             //Plague Doctor requires at least 1 of {Lil' Monsta, Legion, Riot, Alchemist}
             if (checkList.contains("Plague Doctor")) {
-                if (checkList.contains("Lil' Monsta") || checkList.contains("Legion") || checkList.contains("Riot") || checkList.contains("Alchemist")){
+                if (checkList.contains("Lil' Monsta") || checkList.contains("Legion") || checkList.contains("Riot") || checkList.contains("Alchemist") || checkList.contains("Atheist")){
                     it_works = true;
                 } else {
                     continue;
