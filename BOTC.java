@@ -603,9 +603,9 @@ public static void main(String[] args) {
             //Lycanthrope requires at least 1 of {Empath, Farmer, Fool, King, Mayor, Oracle, Pixie, Poppy Grower, Ravenkeeper, Sailor, Tea Lady, Innkeeper, Acrobat, Barber, Goon, Moonchild, Sweetheart, Plague Doctor}
             if (checkList.contains("Lycanthrope")) {
                 if (checkList.contains("Empath") || checkList.contains("Farmer") || checkList.contains("Fool") || checkList.contains("King") || checkList.contains("Mayor") || checkList.contains("Oracle") || checkList.contains("Pixie") || checkList.contains("Poppy Grower") || checkList.contains("Ravenkeeper") || checkList.contains("Sailor") || checkList.contains("Tea Lady") || checkList.contains("Innkeeper") || checkList.contains("Acrobat") || checkList.contains("Barber") || checkList.contains("Goon") || checkList.contains("Moonchild") || checkList.contains("Sweetheart") || checkList.contains("Plague Doctor")) {
-                    continue;
-                } else {
                     it_works = true;
+                } else {
+                    continue;
                 }
             }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
