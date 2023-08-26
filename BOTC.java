@@ -471,8 +471,8 @@ public static void main(String[] args) {
                     continue;
                 }
             }
-            //Balloonist requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Plague Doctor, Politician, Recluse, Snitch}
-            if (checkList.contains("Balloonist")){
+            //At least 1 {Balloonist, Fang Gu, Godfather} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Plague Doctor, Politician, Recluse, Snitch}
+            if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather")){
                 if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch")){
                     it_works = true;
                 } else {
@@ -594,7 +594,15 @@ public static void main(String[] args) {
                 }
             }
             if (checkList.contains("Plague Doctor") && checkList.contains("Marionette")) {
-                if (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") && checkList.contains("Goon")) {
+                if (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Goon")) {
+                    continue;
+                } else {
+                    it_works = true;
+                }
+            }
+            //Lycanthrope requires at least 1 of {Empath, Farmer, Fool, King, Mayor, Oracle, Pixie, Poppy Grower, Ravenkeeper, Sailor, Tea Lady, Innkeeper, Acrobat, Barber, Goon, Moonchild, Sweetheart, Plague Doctor}
+            if (checkList.contains("Lycanthrope")) {
+                if (checkList.contains("Empath") || checkList.contains("Farmer") || checkList.contains("Fool") || checkList.contains("King") || checkList.contains("Mayor") || checkList.contains("Oracle") || checkList.contains("Pixie") || checkList.contains("Poppy Grower") || checkList.contains("Ravenkeeper") || checkList.contains("Sailor") || checkList.contains("Tea Lady") || checkList.contains("Innkeeper") || checkList.contains("Acrobat") || checkList.contains("Barber") || checkList.contains("Goon") || checkList.contains("Moonchild") || checkList.contains("Sweetheart") || checkList.contains("Plague Doctor")) {
                     continue;
                 } else {
                     it_works = true;
