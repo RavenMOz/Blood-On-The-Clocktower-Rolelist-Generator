@@ -608,6 +608,14 @@ public static void main(String[] args) {
                     continue;
                 }
             }
+            //Vizier can't have {Evil Twin, Goblin, Leviathan, Mastermind, Saint}
+            if (checkList.contains("Vizier")) {
+                if (checkList.contains("Evil Twin") || checkList.contains("Goblin") || checkList.contains("Leviathan") || checkList.contains("Mastermind") || checkList.contains("Saint")) {
+                    continue;
+                } else {
+                    it_works = true;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
