@@ -277,8 +277,8 @@ public static void main(String[] args) {
             if (checkList.contains("Vigormortis") && (checkList.contains("Goblin") || checkList.contains("Evil Twin") || checkList.contains("Boomdandy") || checkList.contains("Psychopath") || checkList.contains("Scarlett Woman"))) {
                 continue;    
             }
-            //At least 1 of {Riot, Al-Hadikhia, Leviathan} requires an Engineer
-            if (checkList.contains("Riot") || checkList.contains("Al-Hadikhia") || checkList.contains("Leviathan")) {
+            //At least 1 of {Riot, Al-Hadikhia, Leviathan, Legion} requires an Engineer
+            if (checkList.contains("Riot") || checkList.contains("Al-Hadikhia") || checkList.contains("Leviathan") || checkList.contains("Legion")) {
                 if (checkList.contains("Engineer")){
                     it_works = true;
                 } else {
