@@ -600,6 +600,14 @@ public static void main(String[] args) {
                     it_works = true;
                 }
             }
+            //If both Plague Doctor and Baron are in the set up, Pit-Hag must be in there
+            if (checkList.contains("Plague Doctor") && checkList.contains("Baron")) {
+                if (checkList.contains("Pit-Hag")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //Lycanthrope requires at least 1 of {Empath, Farmer, Fool, King, Mayor, Oracle, Pixie, Poppy Grower, Ravenkeeper, Sailor, Tea Lady, Innkeeper, Acrobat, Barber, Goon, Moonchild, Sweetheart, Plague Doctor}
             if (checkList.contains("Lycanthrope")) {
                 if (checkList.contains("Empath") || checkList.contains("Farmer") || checkList.contains("Fool") || checkList.contains("King") || checkList.contains("Mayor") || checkList.contains("Oracle") || checkList.contains("Pixie") || checkList.contains("Poppy Grower") || checkList.contains("Ravenkeeper") || checkList.contains("Sailor") || checkList.contains("Tea Lady") || checkList.contains("Innkeeper") || checkList.contains("Acrobat") || checkList.contains("Barber") || checkList.contains("Goon") || checkList.contains("Moonchild") || checkList.contains("Sweetheart") || checkList.contains("Plague Doctor")) {
