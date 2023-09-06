@@ -377,6 +377,10 @@ public static void main(String[] args) {
                     continue;
                 }
             }
+            //Leviathan and {Cerenovus, Grandmother} can't be together
+            if (checkList.contains("Leviathan") && (checkList.contains("Cerenovus") || checkList.contains("Grandmother"))) {
+                continue;
+            }
             //Snitch requires at least 1 of {Poppy Grower, Lil' Monsta}
             if (checkList.contains("Snitch")) {
                 if (checkList.contains("Poppy Grower") || checkList.contains("Lil' Monsta")) {
