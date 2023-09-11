@@ -628,6 +628,21 @@ public static void main(String[] args) {
                     it_works = true;
                 }
             }
+            //Vortox requires at least 1 of {Goblin, Fearmonger} and vice versa
+            if (checkList.contains("Vortox")) {
+                if (checkList.contains("Goblin") || checkList.contains("Fearmonger")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Goblin") || checkList.contains("Fearmonger")) {
+                if (checkList.contains("Vortox")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
