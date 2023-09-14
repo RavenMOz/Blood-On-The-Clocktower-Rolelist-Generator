@@ -357,6 +357,21 @@ public static void main(String[] args) {
                     continue;
                 }
             }
+            //If Pit-Hag or Engineer is with at least 1 of {Organ Grinder, Fearmonger}, it requires the other
+            if (checkList.contains("Pit-Hag") && (checkList.contains("Organ Grinder") || checkList.contains("Fearmonger"))) {
+                if (checkList.contains("Engineer")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Engineer") && (checkList.contains("Organ Grinder") || checkList.contains("Fearmonger"))) {
+                if (checkList.contains("Pit-Hag")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //Lil' Monsta requires at least 1 of {Imp, Barber, Snake Charmer, Fang Gu}
             if (checkList.contains("Lil' Monsta")) {
                 if (checkList.contains("Imp") || checkList.contains("Barber")  || checkList.contains("Snake Charmer") || checkList.contains("Fang Gu")) {
