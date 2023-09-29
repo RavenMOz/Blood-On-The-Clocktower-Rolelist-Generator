@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class BOTC{
         public static void main(String[] args) {
-                String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Virgin", "Washerwoman"};
+                String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
@@ -588,9 +588,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Harpy requires at least 1 of {Bounty Hunter, Cult Leader, Dreamer, Empath, Flowergirl, Fortune Teller, Gambler, Investigator, Juggler, Noble, Pixie, Sage, Seamstress, Town Crier, Tea Lady, Undertaker, Virgin, Moonchild, Puzzlemaster}
+            //Harpy requires at least 1 of {Bounty Hunter, Cult Leader, Dreamer, Empath, Flowergirl, Fortune Teller, Gambler, Investigator, Juggler, Noble, Pixie, Sage, Seamstress, Shugenja, Town Crier, Tea Lady, Undertaker, Virgin, Moonchild, Puzzlemaster}
             if (checkList.contains("Harpy")) {
-                if (checkList.contains("Bounty Hunter") || checkList.contains("Cult Leader") || checkList.contains("Dreamer") || checkList.contains("Empath") || checkList.contains("Flowergirl") || checkList.contains("Fortune Teller") || checkList.contains("Gambler") || checkList.contains("Investigator") || checkList.contains("Juggler") || checkList.contains("Noble") || checkList.contains("Pixie") || checkList.contains("Sage") || checkList.contains("Seamstress") || checkList.contains("Town Crier") || checkList.contains("Tea Lady") || checkList.contains("Undertaker") || checkList.contains("Virgin") || checkList.contains("Moonchild") || checkList.contains("Puzzlemasterer")){
+                if (checkList.contains("Bounty Hunter") || checkList.contains("Cult Leader") || checkList.contains("Dreamer") || checkList.contains("Empath") || checkList.contains("Flowergirl") || checkList.contains("Fortune Teller") || checkList.contains("Gambler") || checkList.contains("Investigator") || checkList.contains("Juggler") || checkList.contains("Noble") || checkList.contains("Pixie") || checkList.contains("Sage") || checkList.contains("Seamstress") || checkList.contains("Shugenja") || checkList.contains("Town Crier") || checkList.contains("Tea Lady") || checkList.contains("Undertaker") || checkList.contains("Virgin") || checkList.contains("Moonchild") || checkList.contains("Puzzlemasterer")){
                     it_works = true;
                 } else {
                     continue;
@@ -604,7 +604,7 @@ public class BOTC{
                     continue;
                 }
             }
-            //Plague Doctor requires at least 1 of {Marionette, at least 1 of {Bounty Hunter, Mezepheles, Cult Leader, Goon}} but not both
+            //Plague Doctor requires at least 1 of {Marionette, at least 1 of {Bounty Hunter, Mezepheles, Cult Leader, Goon} but not both
             if (checkList.contains("Plague Doctor") && (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") && checkList.contains("Goon"))) {
                 if (checkList.contains("Marionette")){
                     continue;
@@ -653,6 +653,30 @@ public class BOTC{
             }
             if (checkList.contains("Goblin") || checkList.contains("Fearmonger")) {
                 if (checkList.contains("Vortox")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Shugenja requires at least 1 of {Cannibal, Philosopher, Pixie}
+            if (checkList.contains("Shugenja")) {
+                if (checkList.contains("Cannibal") || checkList.contains("Philosopher") || checkList.contains("Pixie")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Shugenja requires at least 1 of {Spy, Recluse}
+            if (checkList.contains("Shugenja")) {
+                if (checkList.contains("Spy") || checkList.contains("Recluse")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Shugenja requires Legion
+            if (checkList.contains("Shugenja")) {
+                if (checkList.contains("Legion")) {
                     it_works = true;
                 } else {
                     continue;
