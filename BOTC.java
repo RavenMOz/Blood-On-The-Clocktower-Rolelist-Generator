@@ -825,4 +825,4 @@ public class BOTC{
 }
     
 
-//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo and pokesvorlds for helping me out with the code
+//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo, and pokesvorlds for helping me out with the code
