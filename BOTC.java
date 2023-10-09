@@ -293,15 +293,15 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Mastermind, Po, Zombuul} requires at least 1 of {Soldier, Exorcist, Minstrel, Pit-Hag} and vice versa
+            //At least 1 of {Mastermind, Po, Zombuul} requires at least 1 of {Soldier, Exorcist, Minstrel, Pit-Hag, Evil Twin} and vice versa
             if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul")) {
-                if (checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel") || checkList.contains("Pit-Hag")){
+                if (checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel") || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")){
                     it_works = true;
                 } else {
                     continue;
                 }
             }
-            if ((checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel")) || checkList.contains("Pit-Hag")) {
+            if ((checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel")) || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")) {
                 if (checkList.contains("Mastermind") || checkList.contains("Po")|| checkList.contains("Zombuul")) {
                     it_works = true;
                 } else {
@@ -381,7 +381,7 @@ public class BOTC{
                 }
             }
             //Magician can't be with {Fang Gu, Imp, Vortox}
-            if (checkList.contains("Magician") && (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Vortox"))) {
+            if (checkList.contains("Magician") && (checkList.contains("Fang Gu") || checkList.contains("Imp"))) {
                 continue;
             }
             //If Leviathan is with at least one of {Assassin, Godfather}, then it requires at least 1 of {Tinker, Gambler, Lycanthrope, Acrobat, Grandmother, Moonchild}
@@ -825,4 +825,4 @@ public class BOTC{
 }
     
 
-//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo, and pokesvorlds for helping me out with the code
+//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo and pokesvorlds for helping me out with the code
