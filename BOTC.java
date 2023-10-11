@@ -682,6 +682,14 @@ public class BOTC{
                     continue;
                 }
             }
+            //Vizier requires Scarlet Woman
+            if (checkList.contains("Vizier")) {
+                if (checkList.contains("Scarlet Woman")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
