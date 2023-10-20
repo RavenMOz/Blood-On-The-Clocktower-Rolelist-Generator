@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -7,7 +11,7 @@ public class BOTC{
                 String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
-                String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
+                String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
                 int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
                 ArrayList<String> TF_pref = getTFPref();
                 ArrayList<String> O_pref = getOPref();
@@ -293,8 +297,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Mastermind, Po, Zombuul} requires at least 1 of {Soldier, Exorcist, Minstrel, Pit-Hag, Evil Twin} and vice versa
-            if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul")) {
+            //At least 1 of {Mastermind, Po, Zombuul, Ojo} requires at least 1 of {Soldier, Exorcist, Minstrel, Pit-Hag, Evil Twin} and vice versa
+            if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo")) {
                 if (checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel") || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")){
                     it_works = true;
                 } else {
@@ -302,7 +306,7 @@ public class BOTC{
                 }
             }
             if ((checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel")) || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")) {
-                if (checkList.contains("Mastermind") || checkList.contains("Po")|| checkList.contains("Zombuul")) {
+                if (checkList.contains("Mastermind") || checkList.contains("Po")|| checkList.contains("Zombuul") || checkList.contains("Ojo")) {
                     it_works = true;
                 } else {
                     continue;
@@ -320,38 +324,52 @@ public class BOTC{
             if (checkList.contains("Lunatic") && (checkList.contains("Fang Gu") || checkList.contains("Imp"))) {
                 continue;
             }
-            //Mastermind, Po, and Zombuul require each other
+            //Mastermind, Po, Ojo, Zombuul require each other
             if (checkList.contains("Mastermind")) {
-                if (checkList.contains("Po") || checkList.contains("Zombuul")){
+                if (checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo")){
                     it_works = true;
                 } else {
                     continue;
                 }
             }
             if (checkList.contains("Po")) {
-                if (checkList.contains("Mastermind") || checkList.contains("Zombuul")) {
+                if (checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Mastermind")) {
                     it_works = true;
                 } else {
                     continue;
                 }
             }
             if (checkList.contains("Zombuul")) {
-                if (checkList.contains("Mastermind") || checkList.contains("Po")) {
+                if (checkList.contains("Ojo") || checkList.contains("Mastermind") || checkList.contains("Po")) {
                     it_works = true;
                 } else {
                     continue;
                 }
             }
-            //Lil' Monsta requires Legion and vice versa
+            if (checkList.contains("Ojo")) {
+                if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //{Lil' Monsta, Legion, Ojo} require at least 1 of the other
             if (checkList.contains("Lil' Monsta")) {
-                if (checkList.contains("Legion")) {
+                if (checkList.contains("Legion") || checkList.contains("Ojo")) {
                     it_works = true;
                 } else {
                     continue;
                 }
             }
             if (checkList.contains("Legion")) {
-                if (checkList.contains("Lil' Monsta")) {
+                if (checkList.contains("Ojo")|| checkList.contains("Lil' Monsta")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Ojo")) {
+                if (checkList.contains("Lil' Monsta")|| checkList.contains("Legion")) {
                     it_works = true;
                 } else {
                     continue;
@@ -439,8 +457,8 @@ public class BOTC{
                     continue;
                 }
             }
-            // At least 1 of {Po, Shabaloth} requires at least 1 {Tinker, Gossip, Gambler, Acrobat, Grandmother, Moonchild}
-            if (checkList.contains("Po") || checkList.contains("Shabaloth")) {
+            // At least 1 of {Po, Shabaloth, Ojo} requires at least 1 {Tinker, Gossip, Gambler, Acrobat, Grandmother, Moonchild}
+            if (checkList.contains("Po") || checkList.contains("Shabaloth") || checkList.contains("Ojo")) {
                 if (checkList.contains("Tinker") || checkList.contains("Gossip") || checkList.contains("Pit-Hag") || checkList.contains("Gambler") || checkList.contains("Acrobat") || checkList.contains("Grandmother") || checkList.contains("Moonchild")) {
                     it_works = true;
                 } else {
@@ -690,11 +708,43 @@ public class BOTC{
                     continue;
                 }
             }
+            //Ojo requires at least 1 of {Spy, Recluse, Mayor}
+            if (checkList.contains("Ojo")) {
+                if (checkList.contains("Spy") || checkList.contains("Recluse") || checkList.contains("Mayor")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Ojo requires at least 1 of {Artist, Courtier, Engineer, Huntsman, Nightwatchman, Philosopher, Professor, Seamstress, Slayer, Golem, Puzzlemaster}
+            if (checkList.contains("Ojo")) {
+                if (checkList.contains("Artist") || checkList.contains("Courtier") || checkList.contains("Engineer") || checkList.contains("Huntsman") || checkList.contains("Nightwatchman") || checkList.contains("Philosopher") || checkList.contains("Professor") || checkList.contains("Seamstress") || checkList.contains("Slayer") || checkList.contains("Golem") || checkList.contains("Puzzlemaster")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //If Ojo and Oracle together, it requires at least 1 of {Assassin, Baron, Godfather, Marionette, Mezepheles, Spy}
+            if (checkList.contains("Ojo")) {
+                if (checkList.contains("Assassin") || checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Marionette") || checkList.contains("Mezepheles") || checkList.contains("Spy")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Ojo can not be with {Choirboy, Poppy Grower, Magician}
+            if (checkList.contains("Ojo")) {
+                if (checkList.contains("Choirboy") || checkList.contains("Poppy Grower") || checkList.contains("Magician")) {
+                    continue;
+                } else {
+                    it_works = true;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
                 List<String> temp = checkList;
-                String[] NotLoudDemon = {"Fang Gu", "Imp", "Lil' Monsta", "Lleech", "No Dashii", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
+                String[] NotLoudDemon = {"Fang Gu", "Imp", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
                 for(int j = 0; j < NotLoudDemon.length; j = j + 1){
                     if (temp.contains(NotLoudDemon[j])) {
                         NonLoudDemon = NonLoudDemon + 1;
