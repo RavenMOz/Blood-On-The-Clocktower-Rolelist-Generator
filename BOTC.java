@@ -217,8 +217,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //Harpy requires at least 1 of {Lleech, Devil's Advocate} and vice versa
-            if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate")) {
+            //Harpy requires Lleech and vice versa
+            if (checkList.contains("Lleech")) {
                 if (checkList.contains("Harpy")){
                     it_works = true;
                 } else {
@@ -226,6 +226,14 @@ public class BOTC{
                 }
             }
             if (checkList.contains("Harpy")) {
+                if (checkList.contains("Lleech")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Organ Grinder requires at least 1 of {Lleech, Devil's Advocate}
+            if (checkList.contains("Organ Grinder")) {
                 if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate")){
                     it_works = true;
                 } else {
