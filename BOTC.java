@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class BOTC{
         public static void main(String[] args) {
                 String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Virgin", "Washerwoman"};
-                String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
+                String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
                 int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
@@ -518,7 +518,7 @@ public class BOTC{
             }
             //At least 1 {Balloonist, Fang Gu, Godfather} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Plague Doctor, Politician, Recluse, Snitch}
             if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather")){
-                if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch")){
+                if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch") || checkList.contains("Hatter")){
                     it_works = true;
                 } else {
                     continue;
@@ -764,6 +764,14 @@ public class BOTC{
                     continue;
                 }
             }
+            //
+            if (checkList.contains("Hatter")) {
+                if (checkList.contains("Athiest") || checkList.contains("Plague Doctor") || checkList.contains("Alchemist") || checkList.contains("Pit-Hag") || checkList.contains("Barber") ) {
+                    it_works = true;
+                } else {
+                    continue;
+                } 
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
@@ -819,6 +827,10 @@ public class BOTC{
         {"Engineer", "Riot"},
         {"Fang Gu", "Scarlett Woman"},
         {"Godfather", "Heretic"},
+        {"Hatter", "Legion"},
+        {"Hatter", "Leviathan"},
+        {"Hatter", "Lil’ Monsta"},
+        {"Hatter", "Riot"},
         {"Legion", "Preacher"},
         {"Leviathan", "Farmer"},
         {"Leviathan", "Innkeeper"},
