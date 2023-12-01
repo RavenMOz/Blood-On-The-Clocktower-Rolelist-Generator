@@ -764,13 +764,21 @@ public class BOTC{
                     continue;
                 }
             }
-            //
+            //Hatter requires at least 1 of {Athiest, Plague Doctor, Engineer, Pit-Hag, Barber}
             if (checkList.contains("Hatter")) {
-                if (checkList.contains("Athiest") || checkList.contains("Plague Doctor") || checkList.contains("Alchemist") || checkList.contains("Pit-Hag") || checkList.contains("Barber") ) {
+                if (checkList.contains("Athiest") || checkList.contains("Plague Doctor") || checkList.contains("Engineer") || checkList.contains("Pit-Hag") || checkList.contains("Barber") ) {
                     it_works = true;
                 } else {
                     continue;
                 } 
+            }
+            //Hatter requires Alchemist
+            if (checkList.contains("Hatter")) {
+                if (checkList.contains("Alchemist")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
             }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
