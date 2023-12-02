@@ -780,6 +780,14 @@ public class BOTC{
                     continue;
                 }
             }
+            //Hatter requires Alchemist
+            if (checkList.contains("Hatter") && checkList.contains("Vortox")) {
+                if (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Legion") || checkList.contains("Lil Monsta") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Ojo") || checkList.contains("Pukka") || checkList.contains("Vigormortis")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
