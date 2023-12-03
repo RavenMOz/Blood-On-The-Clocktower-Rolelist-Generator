@@ -878,6 +878,7 @@ public class BOTC{
         {"Organ Grinder", "Preacher"},
         {"Pit-Hag", "Damsel"},
         {"Pit-Hag", "Heretic"},
+        {"Pit-Hag", "Leviathan"},
         {"Pit-Hag", "Politician"},
         {"Pit-Hag", "Riot"},
         {"Poppy Grower", "Widow"},
