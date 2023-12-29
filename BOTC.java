@@ -563,6 +563,10 @@ public class BOTC{
             if (checkList.contains("Alchemist") && checkList.contains("Marionette")){
                 continue;
             }
+            //Can't have both Cult Leader and Heretic
+            if (checkList.contains("Cult Leader") && checkList.contains("Heretic")){
+                continue;
+            }
             //Can't have both Bounty Hunter and Mezepheles
             if (checkList.contains("Bounty Hunter") && checkList.contains("Mezepheles")){
                 continue;
@@ -835,11 +839,19 @@ public class BOTC{
                     continue;
                 }
             }
+            //Kazali can't have {Poppy Grower, Magician}
+            if (checkList.contains("Kazali")) {
+                if (!(checkList.contains("Poppy Grower") || checkList.contains("Magician"))) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
                 List<String> temp = checkList;
-                String[] NotLoudDemon = {"Fang Gu", "Imp", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
+                String[] NotLoudDemon = {"Fang Gu", "Imp", "Kazali", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
                 for(int j = 0; j < NotLoudDemon.length; j = j + 1){
                     if (temp.contains(NotLoudDemon[j])) {
                         NonLoudDemon = NonLoudDemon + 1;
@@ -989,4 +1001,3 @@ public class BOTC{
     
 
 //A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo and pokesvorlds for helping me out with the code
-
