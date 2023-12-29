@@ -11,7 +11,7 @@ public class BOTC{
                 String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
-                String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
+                String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
                 int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
                 ArrayList<String> TF_pref = getTFPref();
                 ArrayList<String> O_pref = getOPref();
@@ -516,8 +516,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 {Balloonist, Fang Gu, Godfather} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Plague Doctor, Politician, Recluse, Snitch}
-            if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather")){
+            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Plague Doctor, Politician, Recluse, Snitch}
+            if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather") || checkList.contains("Kazali")){
                 if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch") || checkList.contains("Hatter")){
                     it_works = true;
                 } else {
@@ -780,9 +780,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Hatter requires Alchemist
+            //If Hatter and Vortox are together, it requires at least 1 of {Fang Gu, Imp, Legion, Lil' Monsta, Lleech, No Dashii, Ojo, Pukka, Vigormortis, Kazali}
             if (checkList.contains("Hatter") && checkList.contains("Vortox")) {
-                if (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Legion") || checkList.contains("Lil' Monsta") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Ojo") || checkList.contains("Pukka") || checkList.contains("Vigormortis")) {
+                if (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Legion") || checkList.contains("Lil' Monsta") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Ojo") || checkList.contains("Pukka") || checkList.contains("Vigormortis")  || checkList.contains("Kazali")) {
                     it_works = true;
                 } else {
                     continue;
@@ -798,6 +798,38 @@ public class BOTC{
             }
             if (checkList.contains("Fang Gu") && !(checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist"))) {
                 if (checkList.contains("Vigormortis") || checkList.contains("Legion") || checkList.contains("Lil' Monsta")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Kazali needs at least 1 of {Fang Gu, Baron, Godfather, Ballonist, Vigormortis}
+            if (checkList.contains("Kazali")) {
+                if (checkList.contains("Fang Gu") || checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist") || checkList.contains("Vigormortis")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Kazali needs at least 1 of {Kazali, Hatter}
+            if (checkList.contains("Kazali")) {
+                if (checkList.contains("Barber") || checkList.contains("Hatter")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Kazali needs at least 1 of {Alchemist, Plague Doctor}
+            if (checkList.contains("Kazali")) {
+                if (checkList.contains("Alchemist") || checkList.contains("Plague Doctor")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Kazali needs at least 1 of {Chef, Clockmaker}
+            if (checkList.contains("Kazali")) {
+                if (checkList.contains("Chef") || checkList.contains("Clockmaker")) {
                     it_works = true;
                 } else {
                     continue;
@@ -862,6 +894,11 @@ public class BOTC{
         {"Hatter", "Leviathan"},
         {"Hatter", "Lil’ Monsta"},
         {"Hatter", "Riot"},
+        {"Kazali", "Bounty Hunter"},
+        {"Kazali", "Choirboy"},
+        {"Kazali", "Huntsman"},
+        {"Kazali", "Goon"},
+        {"Kazali", "Marionette"},
         {"Legion", "Preacher"},
         {"Leviathan", "Farmer"},
         {"Leviathan", "Innkeeper"},
@@ -952,3 +989,4 @@ public class BOTC{
     
 
 //A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo and pokesvorlds for helping me out with the code
+
