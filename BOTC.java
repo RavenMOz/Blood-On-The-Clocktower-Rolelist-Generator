@@ -792,6 +792,14 @@ public class BOTC{
                     continue;
                 }
             }
+            //Hatter requires at least 1 of 
+            if (checkList.contains("Hatter")) {
+                if (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Lil' Monsta")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //If {Baron, Godfather, Balloonist} is not the there and at least 1 of {Vigormortis, Fang Gu} is, it requires at least 1 of the other or {Legion, Lil' Monsta}
             if (checkList.contains("Vigormortis") && !(checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist"))) {
                 if (checkList.contains("Fang Gu") || checkList.contains("Legion") || checkList.contains("Lil' Monsta")) {
@@ -1000,4 +1008,4 @@ public class BOTC{
 }
     
 
-//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo and pokesvorlds for helping me out with the code
+//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo, pokesvorlds, and !Adrian for helping me out with the code
