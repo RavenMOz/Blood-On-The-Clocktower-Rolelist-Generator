@@ -792,7 +792,7 @@ public class BOTC{
                     continue;
                 }
             }
-            //Hatter requires at least 1 of 
+            //Hatter requires at least 1 of {Fang Gu, Imp, Lil' Monsta}
             if (checkList.contains("Hatter")) {
                 if (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Lil' Monsta")) {
                     it_works = true;
