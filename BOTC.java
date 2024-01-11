@@ -202,8 +202,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Lleech, Devil's Advocate, Harpy} requires at least 1 of {Sailor, Tea Lady, Fool, Pacifist} and vice versa
-            if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate") || checkList.contains("Harpy")) {
+            //At least 1 of {Lleech, Devil's Advocate, Harpy, Organ Grinder} requires at least 1 of {Sailor, Tea Lady, Fool, Pacifist} and vice versa
+            if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate") || checkList.contains("Harpy") || checkList.contains("Organ Grinder")) {
                 if (checkList.contains("Sailor") || checkList.contains("Tea Lady") || checkList.contains("Fool") || checkList.contains("Pacifist")){
                     it_works = true;
                 } else {
@@ -211,7 +211,7 @@ public class BOTC{
                 }
             }
             if (checkList.contains("Sailor") || checkList.contains("Tea Lady") || checkList.contains("Fool") || checkList.contains("Pacifist")) {
-                if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate") || checkList.contains("Harpy")){
+                if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate") || checkList.contains("Harpy") || checkList.contains("Organ Grinder")){
                     it_works = true;
                 } else {
                     continue;
