@@ -481,6 +481,14 @@ public class BOTC{
                     continue;
                 }
             }
+            //Politician requires at least 1 of {Goblin, Fearmonger}
+            if (checkList.contains("Politician")) {
+                if (checkList.contains("Goblin") || checkList.contains("Fearmonger")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //Can't have both Legion and Clockmaker
             if (checkList.contains("Legion") && checkList.contains("Clockmaker")){
                 continue;
@@ -1008,4 +1016,4 @@ public class BOTC{
 }
     
 
-//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo, pokesvorlds, and !Adrian for helping me out with the code
+//A great thank you to Karah, Zoe, Pi, Chris W, gredelston, codetriangle, nyhilo, pokesvorlds, !Adrian, and Le Codex for helping me out with the code
