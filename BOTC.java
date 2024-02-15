@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+
 import javax.swing.JOptionPane;
 
 public class BOTC{
@@ -874,6 +875,28 @@ public class BOTC{
             //Village Idiot requires at least 1 of {Legion, Riot}
             if (checkList.contains("Village Idiot")) {
                 if (checkList.contains("Legion") || checkList.contains("Riot")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //If at least 2 of {Evil Twin, Snake Charmer, Snitch} is on it, it requires the 3rd
+            if (checkList.contains("Evil Twin") && checkList.contains("Snake Charmer")) {
+                if (checkList.contains("Snitch")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Snake Charmer") && checkList.contains("Snitch")) {
+                if (checkList.contains("Evil Twin")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Snitch") && checkList.contains("Evil Twin")) {
+                if (checkList.contains("Snake Charmer")) {
                     it_works = true;
                 } else {
                     continue;
