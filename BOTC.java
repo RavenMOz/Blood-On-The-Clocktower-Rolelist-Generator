@@ -902,6 +902,21 @@ public class BOTC{
                     continue;
                 }
             }
+            //If there's Lleech, then there has to be {Tinker, Scarlett Woman} and vice versa
+            if (checkList.contains("Tinker") && checkList.contains("Scarlett Woman")) {
+                if (checkList.contains("Lleech")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Lleech")) {
+                if (checkList.contains("Tinker") && checkList.contains("Scarlett Woman")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
