@@ -588,7 +588,7 @@ public class BOTC{
             if (checkList.contains("Cult Leader") && checkList.contains("Goon")){
                 continue;
             }
-            // At least 1 of {Mathematican, Acrobat} requires at least 1 of {Courtier, Innkeeper, Minstrel, Philosopher, Sailor, Snake Charmer, Goon, Lunatic, Puzzlemaster, Sweetheart, Widow, Poisoner, Lleech, No Dashii, Pukka, Vigormortis, Vortox, Vikkage Idiot}
+            // At least 1 of {Mathematican, Acrobat} requires at least 1 of {Courtier, Innkeeper, Minstrel, Philosopher, Sailor, Snake Charmer, Goon, Lunatic, Puzzlemaster, Sweetheart, Widow, Poisoner, Lleech, No Dashii, Pukka, Vigormortis, Vortox, Village Idiot}
             if (checkList.contains("Mathematican") || checkList.contains("Acrobat")){
                 if (checkList.contains("Courtier") || checkList.contains("Innkeeper") || checkList.contains("Minstrel") || checkList.contains("Philosopher") || checkList.contains("Sailor") || checkList.contains("Snake Charmer") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Puzzlemaster") || checkList.contains("Sweetheart") || checkList.contains("Widow") || checkList.contains("Poisoner") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Pukka") || checkList.contains("Vigormortis") || checkList.contains("Vortox") || checkList.contains("Village Idiot")) {
                     it_works = true;
