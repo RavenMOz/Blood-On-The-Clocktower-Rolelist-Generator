@@ -12,7 +12,7 @@ public class BOTC{
                 String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
-                String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
+                String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
                 ArrayList<String> TF_pref = getTFPref();
                 ArrayList<String> O_pref = getOPref();
@@ -917,11 +917,75 @@ public class BOTC{
                     continue;
                 }
             }
+            //Yaggababble requires at least 1 of {Shabaloth, Po, Ojo}
+            if (checkList.contains("Yaggababble")) {
+                if (checkList.contains("Shabaloth") || checkList.contains("Po") || checkList.contains("Ojo")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Yaggababble requires at least 1 of {Zombuul, Legion, Lil' Monsta}
+            if (checkList.contains("Yaggababble")) {
+                if (checkList.contains("Zombuul") || checkList.contains("Legion") || checkList.contains("Lil' Monsta") || checkList.contains("Mastermind")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Yaggababble requires at least 1 of {Harpy, Witch, Slayer}
+            if (checkList.contains("Yaggababble")) {
+                if (checkList.contains("Harpy") || checkList.contains("Witch") || checkList.contains("Slayer")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Yaggababble requires at least 1 of {Tinker, Acrobat}
+            if (checkList.contains("Yaggababble")) {
+                if (checkList.contains("Tinker") || checkList.contains("Acrobat")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Yaggababble requires both or neither of {Golem, Scarlett Woman}
+            if (checkList.contains("Yaggababble") || checkList.contains("Golem")) {
+                if (checkList.contains("Scarlett Woman")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Yaggababble") || checkList.contains("Scarlett Woman")) {
+                if (checkList.contains("Golem")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Yaggababble requires at least 1 of {Courtier, Fool, Exorcist, Minstrel, Sailor, Tea Lady)) {
+                     
+            if (checkList.contains("Yaggababble")) {
+                if (checkList.contains("Courtier") || checkList.contains("Fool") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel") || checkList.contains("Sailor") || checkList.contains("Tea Lady")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Yaggababble requires at least 1 of {Gossip, Gamber, Gofather}
+            if (checkList.contains("Yaggababble")) {
+                if (checkList.contains("Gossip") || checkList.contains("Gambler") || checkList.contains("Godfather")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
             //If there's at least 1 loud demon, there needs to be at least 2 quiet demons. Alternatively, 1 loud Demon with no quiet demons.
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
                 List<String> temp = checkList;
-                String[] NotLoudDemon = {"Fang Gu", "Imp", "Kazali", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Zombuul"};
+                String[] NotLoudDemon = {"Fang Gu", "Imp", "Kazali", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 for(int j = 0; j < NotLoudDemon.length; j = j + 1){
                     if (temp.contains(NotLoudDemon[j])) {
                         NonLoudDemon = NonLoudDemon + 1;
