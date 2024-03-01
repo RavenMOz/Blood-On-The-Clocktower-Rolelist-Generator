@@ -1133,7 +1133,8 @@ public class BOTC{
         {"Vizier", "Magician"},
         {"Vizier", "Preacher"},
         {"Widow", "Damsel"},
-        {"Widow", "Heretic"}
+        {"Widow", "Heretic"},
+        {"Yaggababble", "Exorcist"}
         };
 
         return jinxcases;
