@@ -964,8 +964,7 @@ public class BOTC{
                     continue;
                 }
             }
-            //Yaggababble requires at least 1 of {Courtier, Fool, Exorcist, Minstrel, Sailor, Tea Lady)) {
-                     
+            //Yaggababble requires at least 1 of {Courtier, Fool, Exorcist, Minstrel, Sailor, Tea Lady) {
             if (checkList.contains("Yaggababble")) {
                 if (checkList.contains("Courtier") || checkList.contains("Fool") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel") || checkList.contains("Sailor") || checkList.contains("Tea Lady")) {
                     it_works = true;
@@ -976,6 +975,14 @@ public class BOTC{
             //Yaggababble requires at least 1 of {Gossip, Gamber, Gofather}
             if (checkList.contains("Yaggababble")) {
                 if (checkList.contains("Gossip") || checkList.contains("Gambler") || checkList.contains("Godfather")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
+            //Yaggababble requires Mezepheles
+            if (checkList.contains("Yaggababble")) {
+                if (checkList.contains("Mezepheles")) {
                     it_works = true; 
                 } else {
                     continue;
