@@ -474,8 +474,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //Poppy Grower and at least 1 of {Al-Hadikhia, Fang Gu, Imp, Leviathan, Lil' Monsta, Lleech, No Dashii, Po, Pukka, Shabaloth, Vigormortis} needs a Scarlett Woman
-            if (checkList.contains("Poppy Grower") && (checkList.contains("Al-Hadikhia") || checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Leviathan") || checkList.contains("Lil' Monsta") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Po") || checkList.contains("Pukka") || checkList.contains("Shabaloth") || checkList.contains("Vigormortis"))) {
+            //Poppy Grower and at least 1 of {Al-Hadikhia, Fang Gu, Imp, Leviathan, Lil' Monsta, Lleech, No Dashii, Po, Pukka, Shabaloth, Vigormortis, Yaggababble} needs a Scarlett Woman
+            if (checkList.contains("Poppy Grower") && (checkList.contains("Al-Hadikhia") || checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Leviathan") || checkList.contains("Lil' Monsta") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Po") || checkList.contains("Pukka") || checkList.contains("Shabaloth") || checkList.contains("Vigormortis") || checkList.contains("Yaggababble"))) {
                 if (checkList.contains("Scarlett Woman")) {
                     it_works = true;
                 } else {
