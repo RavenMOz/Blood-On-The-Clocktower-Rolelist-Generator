@@ -949,8 +949,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //Yaggababble requires both or neither of {Golem, Scarlett Woman}
-            if (checkList.contains("Yaggababble") || checkList.contains("Golem")) {
+            //Yaggababble requires both or neither of {{At least 1 of Golem and Tinker}, Scarlett Woman}
+            if (checkList.contains("Yaggababble") || (checkList.contains("Golem") || checkList.contains("Tinker"))) {
                 if (checkList.contains("Scarlett Woman")) {
                     it_works = true;
                 } else {
@@ -958,7 +958,7 @@ public class BOTC{
                 }
             }
             if (checkList.contains("Yaggababble") || checkList.contains("Scarlett Woman")) {
-                if (checkList.contains("Golem")) {
+                if (checkList.contains("Golem") || checkList.contains("Tinker")) {
                     it_works = true;
                 } else {
                     continue;
