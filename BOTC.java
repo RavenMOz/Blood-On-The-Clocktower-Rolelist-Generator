@@ -11,7 +11,7 @@ public class BOTC{
         public static void main(String[] args) {
                 String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
-                String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Vizier", "Widow", "Witch"};
+                String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
                 ArrayList<String> TF_pref = getTFPref();
@@ -333,30 +333,37 @@ public class BOTC{
             if (checkList.contains("Lunatic") && (checkList.contains("Fang Gu") || checkList.contains("Imp"))) {
                 continue;
             }
-            //Mastermind, Po, Ojo, Zombuul require each other
+            //Mastermind, Po, Ojo, Zombuul, Summoner require each other
             if (checkList.contains("Mastermind")) {
-                if (checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo")){
+                if (checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner")){
                     it_works = true;
                 } else {
                     continue;
                 }
             }
             if (checkList.contains("Po")) {
-                if (checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Mastermind")) {
+                if (checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Mastermind") || checkList.contains("Summoner")) {
                     it_works = true;
                 } else {
                     continue;
                 }
             }
             if (checkList.contains("Zombuul")) {
-                if (checkList.contains("Ojo") || checkList.contains("Mastermind") || checkList.contains("Po")) {
+                if (checkList.contains("Ojo") || checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Summoner")) {
                     it_works = true;
                 } else {
                     continue;
                 }
             }
             if (checkList.contains("Ojo")) {
-                if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul")) {
+                if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul")  || checkList.contains("Summoner")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Summoner")) {
+                if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul")  || checkList.contains("Ojo")) {
                     it_works = true;
                 } else {
                     continue;
@@ -458,8 +465,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Mezepheles, Cult Leader, Fang Gu, Goon} requires at least 1 of {Empath, Oracle, Seamstress, Village Idiot}
-            if (checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Fang Gu") || checkList.contains("Goon")) {
+            //At least 1 of {Mezepheles, Cult Leader, Fang Gu, Goon} requires at least 1 of {Empath, Oracle, Seamstress, Village Idiot, Summoner}
+            if (checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Fang Gu") || checkList.contains("Goon") || checkList.contains("Summoner")) {
                 if (checkList.contains("Empath") || checkList.contains("Oracle") || checkList.contains("Seamstress") || checkList.contains("Seamstress")) {
                     it_works = true;
                 } else {
@@ -1125,7 +1132,20 @@ public class BOTC{
         {"Scarlett Woman", "Lil' Monsta"},
         {"Spy", "Damsel"},
         {"Spy", "Heretic"},
-        {"Village Idiot", "Pit-Hag"},
+        {"Summoner", "Alchemist"},
+        {"Summoner", "Barber"},
+        {"Summoner", "Clockmaker"},
+        {"Summoner", "Engineer"},
+        {"Summoner", "Goon"},
+        {"Summoner", "Kazali"},
+        {"Summoner", "Legion"},
+        {"Summoner", "Marionette"},
+        {"Summoner", "Kazali"},
+        {"Summoner", "Pit-Hag"},
+        {"Summoner", "Summoner"},
+        {"Summoner", "Kazali"},
+        {"Summoner", "Riot"}
+        {"Village Idiot", "Zombuul"},
         {"Vizier", "Alchemist"},
         {"Vizier", "Courtier"},
         {"Vizier", "Fearmonger"},
