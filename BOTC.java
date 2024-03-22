@@ -306,8 +306,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Mastermind, Po, Zombuul, Ojo} requires at least 1 of {Soldier, Exorcist, Minstrel, Pit-Hag, Evil Twin} and vice versa
-            if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo")) {
+            //At least 1 of {Mastermind, Po, Zombuul, Ojo, Summoner} requires at least 1 of {Soldier, Exorcist, Minstrel, Pit-Hag, Evil Twin} and vice versa
+            if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner")) {
                 if (checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel") || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")){
                     it_works = true;
                 } else {
@@ -315,7 +315,7 @@ public class BOTC{
                 }
             }
             if ((checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel")) || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")) {
-                if (checkList.contains("Mastermind") || checkList.contains("Po")|| checkList.contains("Zombuul") || checkList.contains("Ojo")) {
+                if (checkList.contains("Mastermind") || checkList.contains("Po")|| checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner")) {
                     it_works = true;
                 } else {
                     continue;
@@ -438,9 +438,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Poppy Grower requires at least 1 of {Legion, Fearmonger, Riot, Organ Grinder, Vizier, Harpy, Fearmonger}
+            //Poppy Grower requires at least 1 of {Legion, Fearmonger, Riot, Organ Grinder, Vizier, Harpy, Fearmonger, Summoner}
             if (checkList.contains("Poppy Grower")) {
-                if (checkList.contains("Legion") || checkList.contains("Fearmonger") || checkList.contains("Riot") || checkList.contains("Organ Grinder") || checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Fearmonger")) {
+                if (checkList.contains("Legion") || checkList.contains("Fearmonger") || checkList.contains("Riot") || checkList.contains("Organ Grinder") || checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Fearmonger")  || checkList.contains("Summoner")) {
                     it_works = true;
                 } else {
                     continue;
@@ -1144,7 +1144,7 @@ public class BOTC{
         {"Summoner", "Pit-Hag"},
         {"Summoner", "Summoner"},
         {"Summoner", "Kazali"},
-        {"Summoner", "Riot"}
+        {"Summoner", "Riot"},
         {"Village Idiot", "Zombuul"},
         {"Vizier", "Alchemist"},
         {"Vizier", "Courtier"},
