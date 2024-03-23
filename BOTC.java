@@ -465,7 +465,7 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Mezepheles, Cult Leader, Fang Gu, Goon} requires at least 1 of {Empath, Oracle, Seamstress, Village Idiot, Summoner}
+            //At least 1 of {Mezepheles, Cult Leader, Fang Gu, Goon, Summoner} requires at least 1 of {Empath, Oracle, Seamstress, Village Idiot}
             if (checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Fang Gu") || checkList.contains("Goon") || checkList.contains("Summoner")) {
                 if (checkList.contains("Empath") || checkList.contains("Oracle") || checkList.contains("Seamstress") || checkList.contains("Seamstress")) {
                     it_works = true;
@@ -581,10 +581,6 @@ public class BOTC{
             }
             //Can't have both Cult Leader and Heretic
             if (checkList.contains("Cult Leader") && checkList.contains("Heretic")){
-                continue;
-            }
-            //Can't have both Bounty Hunter and Mezepheles
-            if (checkList.contains("Bounty Hunter") && checkList.contains("Mezepheles")){
                 continue;
             }
             //Can't have both Steward and Grandmother
@@ -992,6 +988,35 @@ public class BOTC{
                 if (checkList.contains("Mezepheles")) {
                     it_works = true; 
                 } else {
+                    continue;
+                }
+            }
+            //If {Virgin, Golem} require at least 1 of {Bounty Hunter, Summoner, epheles, Fang Gu[only if there's Golem]}
+            if (checkList.contains("Golem") || checkList.contains("Virgin")) {
+                if (checkList.contains("Fang Gu")) {
+                    if (checkList.contains("Golem")) {
+                        it_works = true;
+                    } else {
+                        continue;
+                    }
+                } else if (checkList.contains("Bounty Hunter") || checkList.contains("Summoner") || checkList.contains("Mezepheles")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //If there's Legion, at least 2 of {Bounty Hunter, Cult Leader, Goon, Mezepheles, Summoner}
+            int GoodtoEvil = 0;
+            if (checkList.contains("Legion")) {
+                List<String> temp = checkList;
+                String[] GoodtoEvils = {"Bounty Hunter", "Cult Leader", "Goon", "Mezepheles", "Summoner"};
+                for(int j = 0; j < GoodtoEvils.length; j = j + 1){
+                    if (temp.contains(GoodtoEvils[j])) {
+                        GoodtoEvil = GoodtoEvil + 1;
+                    }
+                }
+            
+                if ((GoodtoEvil == 1) || (GoodtoEvil == 0)){
                     continue;
                 }
             }
