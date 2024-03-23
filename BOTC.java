@@ -333,7 +333,7 @@ public class BOTC{
             if (checkList.contains("Lunatic") && (checkList.contains("Fang Gu") || checkList.contains("Imp"))) {
                 continue;
             }
-            //Mastermind, Po, Ojo, Zombuul, Summoner require each other
+            //Mastermind, Po, Ojo, Zombuul, Summoner require at least 1 of the others
             if (checkList.contains("Mastermind")) {
                 if (checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner")){
                     it_works = true;
