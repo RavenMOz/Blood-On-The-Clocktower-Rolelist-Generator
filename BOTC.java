@@ -724,6 +724,13 @@ public class BOTC{
                     continue;
                 }
             }
+            if (checkList.contains("Shugenja")) {
+                if (checkList.contains("Mezepheles") || checkList.contains("Summoner")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //Vizier requires Scarlet Woman
             if (checkList.contains("Vizier")) {
                 if (checkList.contains("Scarlet Woman")) {
