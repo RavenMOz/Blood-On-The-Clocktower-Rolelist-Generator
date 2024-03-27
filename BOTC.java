@@ -325,6 +325,10 @@ public class BOTC{
             if (checkList.contains("Spy") && checkList.contains("Widow")) {
                 continue;
             }
+            //Can't have both Summoner and Magician
+            if (checkList.contains("Summoner") && checkList.contains("Magician")) {
+                continue;
+            }
             //Spy nor Widow can't be with {King, Choirboy, Exorcist, Puzzlemaster, Heretic} 
             if ((checkList.contains("Spy") || checkList.contains("Widow")) && (checkList.contains("King") || checkList.contains("Choirboy") || checkList.contains("Exorcist") || checkList.contains("Puzzlemaster") || checkList.contains("Heretic"))) {
                 continue;
