@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class BOTC{
         public static void main(String[] args) {
-                String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
+                String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
@@ -563,8 +563,8 @@ public class BOTC{
             if (checkList.contains("Undertaker") && checkList.contains("Cannibal")){
                 continue;
             }
-            //Can't have both Virgin and Golem
-            if (checkList.contains("Virgin") && checkList.contains("Golem")){
+            //Can't have all or any pair of {Virgin, Golem, Banshee}
+            if (checkList.contains("Virgin") && checkList.contains("Golem") && checkList.contains("Banshee")){
                 continue;
             }
             //Can't have Harpy with at least 1 of {Witch, Pychopath}
@@ -1002,8 +1002,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //If {Virgin, Golem} require at least 1 of {Bounty Hunter, Summoner, epheles, Fang Gu[only if there's Golem]}
-            if (checkList.contains("Golem") || checkList.contains("Virgin")) {
+            //If {Virgin, Golem, Banshee} require at least 1 of {Bounty Hunter, Summoner, epheles, Fang Gu[only if there's Golem]}
+            if (checkList.contains("Golem") || checkList.contains("Virgin") || checkList.contains("Banshee")) {
                 if (checkList.contains("Fang Gu")) {
                     if (checkList.contains("Golem")) {
                         it_works = true;
@@ -1016,6 +1016,7 @@ public class BOTC{
                     continue;
                 }
             }
+            
             //If there's Legion, at least 2 of {Bounty Hunter, Cult Leader, Goon, Mezepheles, Summoner}
             int GoodtoEvil = 0;
             if (checkList.contains("Legion")) {
@@ -1078,6 +1079,9 @@ public class BOTC{
         {"Alchemist", "Spy"},
         {"Alchemist", "Widow"},
         {"Al-Hadikhia", "Mastermind"},
+        {"Banshee", "Leviathan"},
+        {"Banshee", "Riot"},
+        {"Banshee", "Vortox"},
         {"Baron", "Heretic"},
         {"Cannibal", "Butler"},
         {"Cerenovus", "Goblin"},
