@@ -1002,9 +1002,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Banshee requires Mezepheles
+            //Banshee requires at least 1 of {Vortox, Evil Twin, Fearmonger, Saint, Goblin}
             if (checkList.contains("Banshee")) {
-                if (checkList.contains("Vortox") || checkList.contains("Evil Twin") || checkList.contains("Fearmonger") || checkList.contains("Saint")) {
+                if (checkList.contains("Vortox") || checkList.contains("Evil Twin") || checkList.contains("Fearmonger") || checkList.contains("Saint") || checkList.contains("Goblin")) {
                     it_works = true; 
                 } else {
                     continue;
