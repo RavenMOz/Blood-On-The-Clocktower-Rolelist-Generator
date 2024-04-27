@@ -1002,7 +1002,15 @@ public class BOTC{
                     continue;
                 }
             }
-            //If {Virgin, Golem, Banshee} require at least 1 of {Bounty Hunter, Summoner, epheles, Fang Gu[only if there's Golem]}
+            //Banshee requires Mezepheles
+            if (checkList.contains("Banshee")) {
+                if (checkList.contains("Vortox") || checkList.contains("Evil Twin") || checkList.contains("Fearmonger") || checkList.contains("Saint")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
+            //If {Virgin, Golem, Banshee} require at least 1 of {Bounty Hunter[only if Virgin or Banshee], Summoner, Mezepheles, Fang Gu[only if there's Golem]}
             if (checkList.contains("Golem") || checkList.contains("Virgin") || checkList.contains("Banshee")) {
                 if (checkList.contains("Fang Gu")) {
                     if (checkList.contains("Golem")) {
@@ -1010,7 +1018,13 @@ public class BOTC{
                     } else {
                         continue;
                     }
-                } else if (checkList.contains("Bounty Hunter") || checkList.contains("Summoner") || checkList.contains("Mezepheles")){
+                } else if (checkList.contains("Bounty Hunter")) {
+                    if (checkList.contains("Virgin") || checkList.contains("Banshee")) {
+                        it_works = true;
+                    } else {
+                        continue;
+                    }
+                } else if (checkList.contains("Summoner") || checkList.contains("Mezepheles")){
                     it_works = true;
                 } else {
                     continue;
