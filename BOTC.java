@@ -1207,6 +1207,7 @@ public class BOTC{
         {"Vizier", "Fearmonger"},
         {"Vizier", "Investigator"},
         {"Vizier", "Magician"},
+        {"Vizier", "Politican"},
         {"Vizier", "Preacher"},
         {"Widow", "Damsel"},
         {"Widow", "Heretic"},
