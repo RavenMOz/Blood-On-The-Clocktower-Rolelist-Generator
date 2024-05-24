@@ -651,7 +651,7 @@ public class BOTC{
                 }
             }
             //Plague Doctor requires at least 1 of {Marionette, at least 1 of {Bounty Hunter, Mezepheles, Cult Leader, Goon, Ogre} but not both
-            if (checkList.contains("Plague Doctor") && (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Goon") || || checkList.contains("Ogre"))) {
+            if (checkList.contains("Plague Doctor") && (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Goon") || checkList.contains("Ogre"))) {
                 if (checkList.contains("Marionette")){
                     continue;
                 } else {
