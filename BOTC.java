@@ -1038,9 +1038,17 @@ public class BOTC{
                     continue;
                 }
             }
-            //Ogre requires Drunk or Marionette
+            //Ogre requires at least 1 of {Drunk, Marionette, Lunatic}
             if (checkList.contains("Ogre")) {
-                if (checkList.contains("Drunk") || checkList.contains("Marionette")) {
+                if (checkList.contains("Drunk") || checkList.contains("Marionette") || checkList.contains("Lunatic")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
+            //Ogre requires at least 1 of {Widow, Snitch, Magician, Poppy Grower, Damsel, King}
+            if (checkList.contains("Ogre")) {
+                if (checkList.contains("Widow") || checkList.contains("Snitch") || checkList.contains("Magician") || checkList.contains("Poppy Grower") || checkList.contains("Damsel") || checkList.contains("King")) {
                     it_works = true; 
                 } else {
                     continue;
