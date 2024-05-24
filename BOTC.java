@@ -1237,7 +1237,7 @@ public class BOTC{
         {"Summoner", "Summoner"},
         {"Summoner", "Kazali"},
         {"Summoner", "Riot"},
-        {"Village Idiot", "Zombuul"},
+        {"Village Idiot", "Pit-Hag"},
         {"Vizier", "Alchemist"},
         {"Vizier", "Courtier"},
         {"Vizier", "Fearmonger"},
