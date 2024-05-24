@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class BOTC{
         public static void main(String[] args) {
                 String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
-                String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Orge", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
+                String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
@@ -469,8 +469,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Mezepheles, Cult Leader, Fang Gu, Goon, Summoner, Orge} requires at least 1 of {Empath, Oracle, Seamstress, Village Idiot}
-            if (checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Fang Gu") || checkList.contains("Goon") || checkList.contains("Summoner") || checkList.contains("Orge")) {
+            //At least 1 of {Mezepheles, Cult Leader, Fang Gu, Goon, Summoner, Ogre} requires at least 1 of {Empath, Oracle, Seamstress, Village Idiot}
+            if (checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Fang Gu") || checkList.contains("Goon") || checkList.contains("Summoner") || checkList.contains("Ogre")) {
                 if (checkList.contains("Empath") || checkList.contains("Oracle") || checkList.contains("Seamstress") || checkList.contains("Seamstress")) {
                     it_works = true;
                 } else {
@@ -536,9 +536,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Orge, Plague Doctor, Politician, Recluse, Snitch}
+            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Ogre, Plague Doctor, Politician, Recluse, Snitch}
             if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather") || checkList.contains("Kazali")){
-                if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Orge")  || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch") || checkList.contains("Hatter")){
+                if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Ogre")  || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch") || checkList.contains("Hatter")){
                     it_works = true;
                 } else {
                     continue;
@@ -650,8 +650,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //Plague Doctor requires at least 1 of {Marionette, at least 1 of {Bounty Hunter, Mezepheles, Cult Leader, Goon, Orge} but not both
-            if (checkList.contains("Plague Doctor") && (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Goon") || || checkList.contains("Orge"))) {
+            //Plague Doctor requires at least 1 of {Marionette, at least 1 of {Bounty Hunter, Mezepheles, Cult Leader, Goon, Ogre} but not both
+            if (checkList.contains("Plague Doctor") && (checkList.contains("Bounty Hunter") || checkList.contains("Mezepheles") || checkList.contains("Cult Leader") || checkList.contains("Goon") || || checkList.contains("Ogre"))) {
                 if (checkList.contains("Marionette")){
                     continue;
                 } else {
@@ -728,9 +728,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Shugenja requires Marionette or Orge
+            //Shugenja requires Marionette or Ogre
             if (checkList.contains("Shugenja")) {
-                if (checkList.contains("Marionette") || checkList.contains("Orge")) {
+                if (checkList.contains("Marionette") || checkList.contains("Ogre")) {
                     it_works = true;
                 } else {
                     continue;
@@ -1038,17 +1038,17 @@ public class BOTC{
                     continue;
                 }
             }
-            //Orge requires Drunk or Marionette
-            if (checkList.contains("Orge")) {
+            //Ogre requires Drunk or Marionette
+            if (checkList.contains("Ogre")) {
                 if (checkList.contains("Drunk") || checkList.contains("Marionette")) {
                     it_works = true; 
                 } else {
                     continue;
                 }
             }
-            //Chef requires at least 1 of  {Legion(if there's also Vortox), Kazali, Marionette, Orge}
+            //Chef requires at least 1 of  {Legion(if there's also Vortox), Kazali, Marionette, Ogre}
             if (checkList.contains("Chef")) {
-                if (checkList.contains("Legion") || checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Orge")) {
+                if (checkList.contains("Legion") || checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Ogre")) {
                     if (checkList.contains("Legion")){
                         if (checkList.contains("Vortox")) {
                             it_works = true;
@@ -1056,7 +1056,7 @@ public class BOTC{
                             continue;
                         }
                     }
-                    if (checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Orge")) {
+                    if (checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Ogre")) {
                         it_works = true; 
                     } else {
                         continue;
@@ -1174,9 +1174,9 @@ public class BOTC{
         {"Organ Grinder", "Flowergirl"},
         {"Organ Grinder", "Minstrel"},
         {"Organ Grinder", "Preacher"},
-        {"Orge", "Pit-Hag"},
-        {"Orge", "Recluse"},
-        {"Orge", "Spy"},
+        {"Ogre", "Pit-Hag"},
+        {"Ogre", "Recluse"},
+        {"Ogre", "Spy"},
         {"Pit-Hag", "Damsel"},
         {"Pit-Hag", "Heretic"},
         {"Pit-Hag", "Leviathan"},
