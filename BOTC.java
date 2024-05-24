@@ -1130,6 +1130,7 @@ public class BOTC{
         {"Banshee", "Vortox"},
         {"Baron", "Heretic"},
         {"Cannibal", "Butler"},
+        {"Cannibal", "Juggler"},
         {"Cerenovus", "Goblin"},
         {"Chambermaid", "Mathematician"},
         {"Engineer", "Legion"},
