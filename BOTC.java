@@ -203,8 +203,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Lleech, Devil's Advocate, Harpy, Organ Grinder} requires at least 1 of {Sailor, Tea Lady, Fool, Pacifist} and vice versa
-            if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate") || checkList.contains("Harpy") || checkList.contains("Organ Grinder")) {
+            //At least 1 of {Lleech, Devil's Advocate, Harpy} requires at least 1 of {Sailor, Tea Lady, Fool, Pacifist} and vice versa
+            if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate") || checkList.contains("Harpy")) {
                 if (checkList.contains("Sailor") || checkList.contains("Tea Lady") || checkList.contains("Fool") || checkList.contains("Pacifist")){
                     it_works = true;
                 } else {
@@ -395,20 +395,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //If Pit-Hag or Engineer is with at least 1 of {Organ Grinder, Fearmonger}, it requires the other
-            if (checkList.contains("Pit-Hag") && (checkList.contains("Organ Grinder") || checkList.contains("Fearmonger"))) {
-                if (checkList.contains("Engineer")) {
-                    it_works = true;
-                } else {
-                    continue;
-                }
-            }
-            if (checkList.contains("Engineer") && (checkList.contains("Organ Grinder") || checkList.contains("Fearmonger"))) {
-                if (checkList.contains("Pit-Hag")) {
-                    it_works = true;
-                } else {
-                    continue;
-                }
+            //If Pit-Hag or Engineer or Hatter is with at least 1 of {Organ Grinder, Fearmonger}, it requires the other
+            if (!((checkList.contains("Pit-Hag") || checkList.contains("Engineer") || checkList.contains("Hatter")) && (checkList.contains("Organ Grinder") || checkList.contains("Fearmonger")))) {
+                it_works = true; 
             }
             //Lil' Monsta requires at least 1 of {Imp, Barber, Snake Charmer, Fang Gu}
             if (checkList.contains("Lil' Monsta")) {
