@@ -233,9 +233,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Organ Grinder requires at least 1 of {Lleech, Devil's Advocate}
+            //Organ Grinder requires Courtier
             if (checkList.contains("Organ Grinder")) {
-                if (checkList.contains("Lleech") || checkList.contains("Devil's Advocate")){
+                if (checkList.contains("Courtier")){
                     it_works = true;
                 } else {
                     continue;
