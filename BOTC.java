@@ -1175,6 +1175,7 @@ public class BOTC{
         {"Ogre", "Pit-Hag"},
         {"Ogre", "Recluse"},
         {"Ogre", "Spy"},
+        {"Philosopher", "Bounty Hunter"},
         {"Pit-Hag", "Damsel"},
         {"Pit-Hag", "Heretic"},
         {"Pit-Hag", "Leviathan"},
