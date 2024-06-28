@@ -1075,6 +1075,14 @@ public class BOTC{
                     continue;
                 }
             }
+            //If there's both Flowergirl and Organ Grinder, requires at least 1 of {Minstrel, Preacher}
+            if (checkList.contains("Flowergirl") && checkList.contains("Organ Grinder")) {
+                if (checkList.contains("Minstrel") || checkList.contains("Preacher")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
             //Chef requires at least 1 of  {Legion(if there's also Vortox), Kazali, Marionette, Ogre}
             if (checkList.contains("Chef")) {
                 if (checkList.contains("Legion") || checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Ogre")) {
@@ -1176,6 +1184,8 @@ public class BOTC{
         {"Kazali", "Huntsman"},
         {"Kazali", "Goon"},
         {"Kazali", "Marionette"},
+        {"Kazali", "Soldier"},
+        {"Legion", "Minstrel"},
         {"Legion", "Preacher"},
         {"Leviathan", "Farmer"},
         {"Leviathan", "Innkeeper"},
@@ -1202,7 +1212,6 @@ public class BOTC{
         {"Marionette", "Snitch"},
         {"Mastermind", "Lleech"},
         {"Organ Grinder", "Butler"},
-        {"Organ Grinder", "Flowergirl"},
         {"Organ Grinder", "Minstrel"},
         {"Organ Grinder", "Preacher"},
         {"Ogre", "Pit-Hag"},
@@ -1264,6 +1273,7 @@ public class BOTC{
         {"Summoner", "Marionette"},
         {"Summoner", "Kazali"},
         {"Summoner", "Pit-Hag"},
+        {"Summoner", "Preacher"},
         {"Summoner", "Pukka"},
         {"Summoner", "Summoner"},
         {"Summoner", "Kazali"},
