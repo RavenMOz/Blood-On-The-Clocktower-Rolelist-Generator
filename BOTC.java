@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class BOTC{
         public static void main(String[] args) {
-                String[] townfolk = {"Alchemist", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
+                String[] townfolk = {"Alchemist", "Alsaahir", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
@@ -1043,6 +1043,38 @@ public class BOTC{
                     continue;
                 }
             }
+            //Alsaahir requires at least 1 of {Recluse, Spy}
+            if (checkList.contains("Alsaahir")) {
+                if (checkList.contains("Recluse") || checkList.contains("Spy")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
+            //Alsaahir requires at least 1 of {Snake Charmer, Summoner, Barber, Hatter, Pit-Hag}
+            if (checkList.contains("Alsaahir")) {
+                if (checkList.contains("Snake Charmer") || checkList.contains("Summoner") || checkList.contains("Barber") || checkList.contains("Hatter") || checkList.contains("Pit-Hag")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
+            //Alsaahir requires at least 1 of {Cannibal, Dreamer, Farmer, Grandmother, High Priestess, Knight, Librarian, Nightwatchman, Pixie, Ravenkeeper, Steward, Undertaker, Washerwoman, Marionette}
+            if (checkList.contains("Alsaahir")) {
+                if (checkList.contains("Cannibal") || checkList.contains("Dreamer") || checkList.contains("Farmer") || checkList.contains("Grandmother") || checkList.contains("High Priestess") || checkList.contains("Knight") || checkList.contains("Librarian") || checkList.contains("Nightwatchman") || checkList.contains("Pixie") || checkList.contains("Ravenkeeper") || checkList.contains("Steward") || checkList.contains("Undertaker") || checkList.contains("Washerwoman") || checkList.contains("Marionette")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
+            //Alsaahir requires at least 1 of {Fang Gu, Imp}
+            if (checkList.contains("Alsaahir")) {
+                if (checkList.contains("Fang Gu") || checkList.contains("Imp")) {
+                    it_works = true; 
+                } else {
+                    continue;
+                }
+            }
             //Chef requires at least 1 of  {Legion(if there's also Vortox), Kazali, Marionette, Ogre}
             if (checkList.contains("Chef")) {
                 if (checkList.contains("Legion") || checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Ogre")) {
@@ -1119,6 +1151,7 @@ public class BOTC{
 
     private static String[][] jinxlist() {
         String[][] jinxcases = new String[][] {
+        {"Alsaahir", "Vizier"}
         {"Alchemist", "Spy"},
         {"Alchemist", "Widow"},
         {"Al-Hadikhia", "Mastermind"},
