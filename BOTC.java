@@ -1151,10 +1151,10 @@ public class BOTC{
 
     private static String[][] jinxlist() {
         String[][] jinxcases = new String[][] {
-        {"Alsaahir", "Vizier"}
         {"Alchemist", "Spy"},
         {"Alchemist", "Widow"},
         {"Al-Hadikhia", "Mastermind"},
+        {"Alsaahir", "Vizier"},
         {"Banshee", "Leviathan"},
         {"Banshee", "Riot"},
         {"Banshee", "Vortox"},
