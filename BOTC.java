@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class BOTC{
         public static void main(String[] args) {
                 String[] townfolk = {"Alchemist", "Alsaahir", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
-                String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker"};
+                String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker", "Zealot"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
@@ -525,9 +525,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Ogre, Plague Doctor, Politician, Recluse, Snitch}
+            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Ogre, Plague Doctor, Politician, Recluse, Snitch, Zealot}
             if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather") || checkList.contains("Kazali")){
-                if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Ogre")  || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch") || checkList.contains("Hatter")){
+                if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Ogre")  || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch") || checkList.contains("Hatter") || checkList.contains("Zealot")){
                     it_works = true;
                 } else {
                     continue;
@@ -999,9 +999,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Banshee requires at least 1 of {Vortox, Evil Twin, Fearmonger, Saint, Goblin}
-            if (checkList.contains("Banshee")) {
-                if (checkList.contains("Vortox") || checkList.contains("Evil Twin") || checkList.contains("Fearmonger") || checkList.contains("Saint") || checkList.contains("Goblin")) {
+            //Banshee & Zealot requires at least 1 of {Vortox, Mastermind, Evil Twin, Fearmonger, Saint, Goblin}
+            if (checkList.contains("Banshee") || checkList.contains("Zealot") ) {
+                if (checkList.contains("Vortox") || checkList.contains("Mastermind") || checkList.contains("Evil Twin") || checkList.contains("Fearmonger") || checkList.contains("Saint") || checkList.contains("Goblin")) {
                     it_works = true; 
                 } else {
                     continue;
@@ -1100,6 +1100,10 @@ public class BOTC{
                     }
                 }
             }
+            //Heretic requires at least 1 of {Alsaahir, Damsel, Klutz, Evil Twin, Fearmonger, Goblin, Mastermind, Leviathan, Riot, Vortox}
+            if ((checkList.contains("Heretic")) && (checkList.contains("Alsaahir") || (checkList.contains("Damsel") || checkList.contains("Klutz") || checkList.contains("Evil Twin") || checkList.contains("Fearmonger") || checkList.contains("Goblin") || checkList.contains("Mastermind") || checkList.contains("Leviathan") || checkList.contains("Riot") || checkList.contains("Vortox")))) {
+                it_works = true;
+            }
             //If there's Legion, at least 2 of {Bounty Hunter, Cult Leader, Goon, Mezepheles, Summoner}
             int GoodtoEvil = 0;
             if (checkList.contains("Legion")) {
@@ -1169,6 +1173,7 @@ public class BOTC{
         {"Baron", "Heretic"},
         {"Cannibal", "Butler"},
         {"Cannibal", "Juggler"},
+        {"Cannibal", "Zealot"},
         {"Cerenovus", "Goblin"},
         {"Chambermaid", "Mathematician"},
         {"Engineer", "Legion"},
@@ -1187,6 +1192,7 @@ public class BOTC{
         {"Kazali", "Soldier"},
         {"Legion", "Minstrel"},
         {"Legion", "Preacher"},
+        {"Legion", "Zealot"},
         {"Leviathan", "Farmer"},
         {"Leviathan", "Innkeeper"},
         {"Leviathan", "Mayor"},
@@ -1258,6 +1264,7 @@ public class BOTC{
         {"Riot", "Soldier"},
         {"Riot", "Town Crier"},
         {"Riot", "Undertaker"},
+        {"Riot", "Zealot"},
         {"Scarlett Woman", "Al-Hadikhia"},
         {"Scarlett Woman", "Lil' Monsta"},
         {"Spy", "Damsel"},
@@ -1286,6 +1293,7 @@ public class BOTC{
         {"Vizier", "Magician"},
         {"Vizier", "Politican"},
         {"Vizier", "Preacher"},
+        {"Vizier", "Zealot"},
         {"Widow", "Damsel"},
         {"Widow", "Heretic"},
         {"Yaggababble", "Exorcist"}
