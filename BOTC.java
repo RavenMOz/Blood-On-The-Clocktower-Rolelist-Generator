@@ -999,8 +999,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //Banshee & Zealot requires at least 1 of {Vortox, Mastermind, Evil Twin, Fearmonger, Saint, Goblin}
-            if (checkList.contains("Banshee") || checkList.contains("Zealot") ) {
+            //Banshee or Zealot or Golem requires at least 1 of {Vortox, Mastermind, Evil Twin, Fearmonger, Saint, Goblin}
+            if (checkList.contains("Banshee") || checkList.contains("Zealot") || checkList.contains("Golem")) {
                 if (checkList.contains("Vortox") || checkList.contains("Mastermind") || checkList.contains("Evil Twin") || checkList.contains("Fearmonger") || checkList.contains("Saint") || checkList.contains("Goblin")) {
                     it_works = true; 
                 } else {
