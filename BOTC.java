@@ -1069,7 +1069,7 @@ public class BOTC{
             }
             //Alsaahir requires at least 1 of {Fang Gu, Imp, Lord Of Typhon, Lil' Monsta}
             if (checkList.contains("Alsaahir")) {
-                if (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Lord Of Typhon"), checkList.contains("Lil' Monsta")) {
+                if (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Lord Of Typhon") || checkList.contains("Lil' Monsta")) {
                     it_works = true; 
                 } else {
                     continue;
