@@ -12,4 +12,4 @@ Regardless, I would like to give thanks to TPI for making this game and series a
 
 
 
-Update August 29th, 2024: The last show casing of the monthly roles has been revealed so the project will go dormant until Garden of Sins, The Tomb, Midnight House of the Damned, and Greatest Show on Earth are completely released. However, updates on TPI's role interactions will still persist for the time being.
+Update August 29th, 2024: The last show casing of the monthly roles has been revealed so the project will go dormant until Garden of Sins, The Tomb, Midnight House of the Damned, and Greatest Show on Earth are completely released. However, updates on TPI's role interactions will still persist for the time being. Correction: Apparently realeases are still continuing in recent infomation.
