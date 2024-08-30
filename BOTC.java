@@ -12,7 +12,7 @@ public class BOTC{
                 String[] townfolk = {"Alchemist", "Alsaahir", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker", "Zealot"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
-                String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
+                String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "Lord Of Typhon", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
                 ArrayList<String> TF_pref = getTFPref();
                 ArrayList<String> O_pref = getOPref();
@@ -474,8 +474,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //Poppy Grower and at least 1 of {Al-Hadikhia, Fang Gu, Imp, Leviathan, Lil' Monsta, Lleech, No Dashii, Po, Pukka, Shabaloth, Vigormortis, Yaggababble} needs a Scarlett Woman
-            if (checkList.contains("Poppy Grower") && (checkList.contains("Al-Hadikhia") || checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Leviathan") || checkList.contains("Lil' Monsta") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Po") || checkList.contains("Pukka") || checkList.contains("Shabaloth") || checkList.contains("Vigormortis") || checkList.contains("Yaggababble"))) {
+            //Poppy Grower and at least 1 of {Al-Hadikhia, Fang Gu, Imp, Leviathan, Lil' Monsta, Lleech, Lord Of Typhon, No Dashii, Po, Pukka, Shabaloth, Vigormortis, Yaggababble} needs a Scarlett Woman
+            if (checkList.contains("Poppy Grower") && (checkList.contains("Al-Hadikhia") || checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Leviathan") || checkList.contains("Lil' Monsta") || checkList.contains("Lleech") || checkList.contains("Lord Of Typhon") || checkList.contains("No Dashii") || checkList.contains("Po") || checkList.contains("Pukka") || checkList.contains("Shabaloth") || checkList.contains("Vigormortis") || checkList.contains("Yaggababble"))) {
                 if (checkList.contains("Scarlett Woman")) {
                     it_works = true;
                 } else {
@@ -525,8 +525,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Ogre, Plague Doctor, Politician, Recluse, Snitch, Zealot}
-            if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather") || checkList.contains("Kazali")){
+            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali, Lord Of Typhon} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Ogre, Plague Doctor, Politician, Recluse, Snitch, Zealot}
+            if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather") || checkList.contains("Kazali") || checkList.contains("Lord Of Typhon")){
                 if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Ogre")  || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch") || checkList.contains("Hatter") || checkList.contains("Zealot")){
                     it_works = true;
                 } else {
@@ -631,9 +631,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Plague Doctor requires at least 1 of {Lil' Monsta, Legion, Riot, Alchemist, Atheist, Engineer, Pit-Hag}
+            //Plague Doctor requires at least 1 of {Lil' Monsta, Legion, Lord Of Typhon, Riot, Alchemist, Atheist, Engineer, Pit-Hag}
             if (checkList.contains("Plague Doctor")) {
-                if (checkList.contains("Lil' Monsta") || checkList.contains("Legion") || checkList.contains("Riot") || checkList.contains("Alchemist") || checkList.contains("Atheist") || checkList.contains("Engineer") || checkList.contains("Pit-Hag")){
+                if (checkList.contains("Lil' Monsta") || checkList.contains("Legion") || checkList.contains("Lord Of Typhon") || checkList.contains("Riot") || checkList.contains("Alchemist") || checkList.contains("Atheist") || checkList.contains("Engineer") || checkList.contains("Pit-Hag")){
                     it_works = true;
                 } else {
                     continue;
@@ -820,24 +820,24 @@ public class BOTC{
                     continue;
                 }
             }
-            //If {Baron, Godfather, Balloonist} is not the there and at least 1 of {Vigormortis, Fang Gu} is, it requires at least 1 of the other or {Legion, Lil' Monsta}
-            if (checkList.contains("Vigormortis") && !(checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist"))) {
+            //If {Baron, Godfather, Balloonist, Lord Of Typhon} is not the there and at least 1 of {Vigormortis, Fang Gu} is, it requires at least 1 of the other or {Legion, Lil' Monsta}
+            if (checkList.contains("Vigormortis") && !(checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist") || checkList.contains("Lord Of Typhon"))) {
                 if (checkList.contains("Fang Gu") || checkList.contains("Legion") || checkList.contains("Lil' Monsta")) {
                     it_works = true;
                 } else {
                     continue;
                 }
             }
-            if (checkList.contains("Fang Gu") && !(checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist"))) {
+            if (checkList.contains("Fang Gu") && !(checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist") || checkList.contains("Lord Of Typhon"))) {
                 if (checkList.contains("Vigormortis") || checkList.contains("Legion") || checkList.contains("Lil' Monsta")) {
                     it_works = true;
                 } else {
                     continue;
                 }
             }
-            //Kazali needs at least 1 of {Fang Gu, Baron, Godfather, Ballonist, Vigormortis}
+            //Kazali needs at least 1 of {Fang Gu, Baron, Godfather, Ballonist, Vigormortis, Lord Of Typhon}
             if (checkList.contains("Kazali")) {
-                if (checkList.contains("Fang Gu") || checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist") || checkList.contains("Vigormortis")) {
+                if (checkList.contains("Fang Gu") || checkList.contains("Baron") || checkList.contains("Godfather") || checkList.contains("Balloonist") || checkList.contains("Vigormortis") || checkList.contains("Lord Of Typhon")) {
                     it_works = true;
                 } else {
                     continue;
@@ -1067,13 +1067,49 @@ public class BOTC{
                     continue;
                 }
             }
-            //Alsaahir requires at least 1 of {Fang Gu, Imp}
+            //Alsaahir requires at least 1 of {Fang Gu, Imp, Lord Of Typhon, Lil' Monsta}
             if (checkList.contains("Alsaahir")) {
-                if (checkList.contains("Fang Gu") || checkList.contains("Imp")) {
+                if (checkList.contains("Fang Gu") || checkList.contains("Imp") || checkList.contains("Lord Of Typhon"), checkList.contains("Lil' Monsta")) {
                     it_works = true; 
                 } else {
                     continue;
                 }
+            }
+            // Lord Of Typhon requires Marionette
+            if (checkList.contains("Lord Of Typhon")) {
+                if (checkList.contains("Marionette")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+
+            }
+            // Lord Of Typhon and Lil' Monsta requires Engineer
+            if (checkList.contains("Lord Of Typhon") || checkList.contains("Lil' Monsta")) {
+                if (checkList.contains("Engineer")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+
+            }
+            // Lord Of Typhon requires Bounty Hunter
+            if (checkList.contains("Lord Of Typhon")) {
+                if (checkList.contains("Bounty Hunter")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+
+            }
+            // If there's both Lord Of Typhon and Devil's Advocate, there must be a Tea Lady
+            if (checkList.contains("Lord Of Typhon") && checkList.contains("Devil's Advocate")) {
+                if (checkList.contains("Tea Lady")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+
             }
             //If there's both Flowergirl and Organ Grinder, requires at least 1 of {Minstrel, Preacher}
             if (checkList.contains("Flowergirl") && checkList.contains("Organ Grinder")) {
@@ -1083,9 +1119,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Chef requires at least 1 of  {Legion(if there's also Vortox), Kazali, Marionette, Ogre}
+            //Chef requires at least 1 of {Legion(if there's also Vortox), Kazali, Marionette, Ogre, Lord Of Typhon}
             if (checkList.contains("Chef")) {
-                if (checkList.contains("Legion") || checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Ogre")) {
+                if (checkList.contains("Legion") || checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Ogre") || checkList.contains("Lord Of Typhon")) {
                     if (checkList.contains("Legion")){
                         if (checkList.contains("Vortox")) {
                             it_works = true;
@@ -1123,7 +1159,7 @@ public class BOTC{
             int NonLoudDemon = 0;
             if ((checkList.contains("Al-Hadikhia") || checkList.contains("Legion") || checkList.contains("Leviathan") || checkList.contains("Riot")) && !(random == 1)) {
                 List<String> temp = checkList;
-                String[] NotLoudDemon = {"Fang Gu", "Imp", "Kazali", "Lil' Monsta", "Lleech", "No Dashii", "Ojo", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
+                String[] NotLoudDemon = {"Fang Gu", "Imp", "Kazali", "Lil' Monsta", "Lleech", "Lord Of Typhon", "No Dashii", "Ojo", "Po", "Pukka", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 for(int j = 0; j < NotLoudDemon.length; j = j + 1){
                     if (temp.contains(NotLoudDemon[j])) {
                         NonLoudDemon = NonLoudDemon + 1;
@@ -1279,6 +1315,7 @@ public class BOTC{
         {"Summoner", "Legion"},
         {"Summoner", "Marionette"},
         {"Summoner", "Kazali"},
+        {"Summoner", "Lord Of Typhon"},
         {"Summoner", "Pit-Hag"},
         {"Summoner", "Preacher"},
         {"Summoner", "Pukka"},
