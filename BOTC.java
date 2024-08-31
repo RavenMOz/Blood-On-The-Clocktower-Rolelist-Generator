@@ -1084,6 +1084,24 @@ public class BOTC{
                 }
 
             }
+            // If there's Lord Of Typhon & Vizier, it requires at least 1 of {Baron, Bounty Hunter, Spy}
+            if (checkList.contains("Lord Of Typhon") && checkList.contains("Vizier")) {
+                if (checkList.contains("Baron") || checkList.contains("Bounty Hunter") || checkList.contains("Spy")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+
+            }
+            //Lord Of Typhon requires Recluse
+            if (checkList.contains("Lord Of Typhon")) {
+                if (checkList.contains("Recluse")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+
+            }
             // Lord Of Typhon and Lil' Monsta requires Engineer
             if (checkList.contains("Lord Of Typhon") || checkList.contains("Lil' Monsta")) {
                 if (checkList.contains("Engineer")) {
