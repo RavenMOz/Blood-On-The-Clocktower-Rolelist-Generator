@@ -928,6 +928,15 @@ public class BOTC{
                     continue;
                 }
             }
+            //If there's Summoner and 1 Demon, then there has to be at least 1 of {}
+            if (checkList.contains("Summoner") && (random==1)) {
+                if (checkList.contains("Exorcist") || checkList.contains("Fool") || checkList.contains("Innkeeper") || checkList.contains("Minstel") || checkList.contains("Monk") || checkList.contains("Soldier") || checkList.contains("Soldier") || checkList.contains("Sailor") || checkList.contains("Tea Lady")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            
             //Yaggababble requires at least 1 of {Shabaloth, Po, Ojo}
             if (checkList.contains("Yaggababble")) {
                 if (checkList.contains("Shabaloth") || checkList.contains("Po") || checkList.contains("Ojo")) {
