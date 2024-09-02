@@ -13,17 +13,35 @@ public class BOTC{
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker", "Zealot"};
                 String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "Lord Of Typhon", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
-                int jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
-                ArrayList<String> TF_pref = getTFPref();
-                ArrayList<String> O_pref = getOPref();
-                ArrayList<String> M_pref = getMPref();
-                ArrayList<String> D_pref = getDPref();
-                String[] rolelist = choosing(townfolk, outsider, minion, demon, jinx_num, TF_pref, O_pref, M_pref, D_pref);
-        
-                for(String list:rolelist) {
-                    System.out.println(list);
+                int jinx_num;
+                String random_or_not = randomness("Do you want randomness(y or yes) or not(n or not)");
+                ArrayList<String> TF_pref;
+                ArrayList<String> O_pref;
+                ArrayList<String> M_pref; 
+                ArrayList<String> D_pref;
+                String[] rolelist;
+                if (random_or_not.equalsIgnoreCase("y") || random_or_not.equalsIgnoreCase("yes")) {
+                    jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
+                    TF_pref = getTFPref();
+                    O_pref = getOPref();
+                    M_pref = getMPref(); 
+                    D_pref = getDPref();
+                    rolelist = choosing(townfolk, outsider, minion, demon, jinx_num, TF_pref, O_pref, M_pref, D_pref);
+                    for(String list:rolelist) {
+                        System.out.println(list);
+                    }
+                } else if (random_or_not.equalsIgnoreCase("n") || random_or_not.equalsIgnoreCase("no")) {
+                    jinx_num = -1;
+                    TF_pref = new ArrayList<String>();
+                    O_pref = new ArrayList<String>();
+                    M_pref = new ArrayList<String>(); 
+                    D_pref = new ArrayList<String>();
+                    rolelist = choosing(townfolk, outsider, minion, demon, jinx_num, TF_pref, O_pref, M_pref, D_pref);
+                    for(String list:rolelist) {
+                        System.out.println(list);
+                    }
                 }
-    }
+            }
 
     public static ArrayList<String> getTFPref() {
         ArrayList<String> arrayList = new ArrayList<>();
@@ -88,6 +106,11 @@ public class BOTC{
         return scanner.nextInt();
     }
 
+    private static String randomness(String prompt) {
+        String nss = JOptionPane.showInputDialog(null,prompt+"?");
+        Scanner scanner = new Scanner(nss);
+        return scanner.next();
+    }
 
 
     private static String[] choosing(String[] townfolk, String[] outsider, String[] minion, String[] demon, int jinx_num, ArrayList<String> TF_pref, ArrayList<String> O_pref, ArrayList<String> M_pref, ArrayList<String> D_pref) {
