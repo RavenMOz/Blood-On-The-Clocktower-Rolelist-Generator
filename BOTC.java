@@ -1152,6 +1152,15 @@ public class BOTC{
                 }
 
             }
+            // Lord Of Typhon requires Legion
+            if (checkList.contains("Lord Of Typhon")) {
+                if (checkList.contains("Legion")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+
+            }
             // If there's both Lord Of Typhon and Devil's Advocate, there must be a Tea Lady
             if (checkList.contains("Lord Of Typhon") && checkList.contains("Devil's Advocate")) {
                 if (checkList.contains("Tea Lady")) {
