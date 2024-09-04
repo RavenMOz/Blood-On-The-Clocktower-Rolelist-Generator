@@ -20,7 +20,7 @@ public class BOTC{
                 ArrayList<String> M_pref; 
                 ArrayList<String> D_pref;
                 String[] rolelist;
-                if (random_or_not.equalsIgnoreCase("y") || random_or_not.equalsIgnoreCase("yes")) {
+                if (random_or_not.equalsIgnoreCase("n") || random_or_not.equalsIgnoreCase("no")) {
                     jinx_num = jinx_max("What is the max number of jinxes you want?[-1 if you don't care about number of jinxes]");
                     TF_pref = getTFPref();
                     O_pref = getOPref();
@@ -30,7 +30,7 @@ public class BOTC{
                     for(String list:rolelist) {
                         System.out.println(list);
                     }
-                } else if (random_or_not.equalsIgnoreCase("n") || random_or_not.equalsIgnoreCase("no")) {
+                } else if (random_or_not.equalsIgnoreCase("y") || random_or_not.equalsIgnoreCase("yes")) {
                     jinx_num = -1;
                     TF_pref = new ArrayList<String>();
                     O_pref = new ArrayList<String>();
