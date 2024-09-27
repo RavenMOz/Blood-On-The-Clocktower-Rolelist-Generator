@@ -11,7 +11,7 @@ public class BOTC{
         public static void main(String[] args) {
                 String[] townfolk = {"Alchemist", "Alsaahir", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker", "Zealot"};
-                String[] minion = {"Assassin", "Baron", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
+                String[] minion = {"Assassin", "Baron", "Boffin", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "Lord Of Typhon", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 int jinx_num;
                 String random_or_not = randomness("Do you want randomness(y or yes) or not(n or not)");
@@ -454,9 +454,9 @@ public class BOTC{
                     continue;
                 }
             }
-            //Poppy Grower requires at least 1 of {Legion, Fearmonger, Riot, Organ Grinder, Vizier, Harpy, Fearmonger, Summoner}
+            //Poppy Grower requires at least 1 of {Legion, Fearmonger, Riot, Organ Grinder, Vizier, Harpy, Fearmonger, Summoner, Boffin}
             if (checkList.contains("Poppy Grower")) {
-                if (checkList.contains("Legion") || checkList.contains("Fearmonger") || checkList.contains("Riot") || checkList.contains("Organ Grinder") || checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Fearmonger")  || checkList.contains("Summoner")) {
+                if (checkList.contains("Legion") || checkList.contains("Fearmonger") || checkList.contains("Riot") || checkList.contains("Organ Grinder") || checkList.contains("Vizier") || checkList.contains("Harpy") || checkList.contains("Fearmonger")  || checkList.contains("Summoner") || checkList.contains("Boffin")) {
                     it_works = true;
                 } else {
                     continue;
@@ -1039,7 +1039,7 @@ public class BOTC{
                     continue;
                 }
             }
-            //If {Virgin, Golem, Banshee} require at least 1 of {Bounty Hunter[only if Virgin or Banshee], Summoner, Mezepheles, Fang Gu[only if there's Golem]}
+            //If {Virgin, Golem, Banshee} require at least 1 of {Bounty Hunter[only if Virgin or Banshee], Summoner, Mezepheles, Fang Gu[only if there's Golem], or Boffin}
             if (checkList.contains("Golem") || checkList.contains("Virgin") || checkList.contains("Banshee")) {
                 if (checkList.contains("Fang Gu")) {
                     if (checkList.contains("Golem")) {
@@ -1055,7 +1055,7 @@ public class BOTC{
                     }
                 } else if (checkList.contains("Summoner") || checkList.contains("Mezepheles")){
                     it_works = true;
-                } else {
+                } else if (checkList.contains("Boffin")) {
                     continue;
                 }
             }
@@ -1173,6 +1173,49 @@ public class BOTC{
                     continue;
                 }
             }
+            //Boffin requires at least 1 of Washerwoman or Librarian[if there isn't a Damsel not Heretic] or Steward or Grandmother[if there's an Imp]
+            if (checkList.contains("Boffin")) {
+                if (checkList.contains("Washerwoman") || checkList.contains("Librarian") || checkList.contains("Steward") || checkList.contains("Grandmother")) {
+                    if (checkList.contains("Librarian")) {
+                        if (checkList.contains("Librarian") || checkList.contains("Librarian")) {
+                            continue;
+                        } else {
+                            it_works = true;
+                        }
+                    } else if (checkList.contains("Grandmother")){
+                        if (checkList.contains("Imp")) {
+                            it_works = true;
+                        } else {
+                            continue;
+                        }
+                    }
+                } else {
+                    continue;
+                }
+            }
+            //Boffin requires Recluse
+            if (checkList.contains("Boffin")) {
+                if (checkList.contains("Recluse")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Boffin is with Alchemist or Lil' Monsta, it requires the other of the 2
+            if (checkList.contains("Boffin") && checkList.contains("Alchemist")) {
+                if (checkList.contains("Lil' Monsta")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Boffin") && checkList.contains("Lil' Monsta")) {
+                if (checkList.contains("Alchemist")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //Chef requires at least 1 of {Legion(if there's also Vortox), Kazali, Marionette, Ogre, Lord Of Typhon}
             if (checkList.contains("Chef")) {
                 if (checkList.contains("Legion") || checkList.contains("Kazali") || checkList.contains("Marionette") || checkList.contains("Ogre") || checkList.contains("Lord Of Typhon")) {
@@ -1261,6 +1304,14 @@ public class BOTC{
         {"Banshee", "Riot"},
         {"Banshee", "Vortox"},
         {"Baron", "Heretic"},
+        {"Boffin", "Alchemist"},
+        {"Boffin", "Cult Leader"},
+        {"Boffin", "Drunk"},
+        {"Boffin", "Goon"},
+        {"Boffin", "Heretic"},
+        {"Boffin", "Ogre"},
+        {"Boffin", "Politician"},
+        {"Boffin", "Village Idiot"},
         {"Cannibal", "Butler"},
         {"Cannibal", "Juggler"},
         {"Cannibal", "Zealot"},
