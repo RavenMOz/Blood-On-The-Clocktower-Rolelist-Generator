@@ -1039,8 +1039,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //If {Virgin, Golem, Banshee} require at least 1 of {Bounty Hunter[only if Virgin or Banshee], Summoner, Mezepheles, Fang Gu[only if there's Golem], or Boffin}
-            if (checkList.contains("Golem") || checkList.contains("Virgin") || checkList.contains("Banshee")) {
+            //If {Virgin, Golem, Banshee, Professor} require at least 1 of {Bounty Hunter[only if Virgin or Banshee], Summoner, Mezepheles, Fang Gu[only if there's Golem], or Boffin}
+            if (checkList.contains("Golem") || checkList.contains("Virgin") || checkList.contains("Banshee") || checkList.contains("Proffesor")) {
                 if (checkList.contains("Fang Gu")) {
                     if (checkList.contains("Golem")) {
                         it_works = true;
@@ -1055,8 +1055,8 @@ public class BOTC{
                     }
                 } else if (checkList.contains("Summoner") || checkList.contains("Mezepheles")){
                     it_works = true;
-                } else if (checkList.contains("Boffin")) {
-                    continue;
+                } else if (checkList.contains("Boffi")) {
+                    it_works = true;
                 }
             }
             //Ogre requires at least 1 of {Drunk, Marionette, Lunatic}
