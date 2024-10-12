@@ -646,6 +646,21 @@ public class BOTC{
                     continue;
                 }
             }
+            //If there's Washerwoman and at least one of {Drunk, Spy}, it requires the other of the 2
+            if (checkList.contains("Drunk") || checkList.contains("Washerwoman")) {
+                if (checkList.contains("Spy")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            if (checkList.contains("Spy") || checkList.contains("Washerwoman")) {
+                if (checkList.contains("Drunk")){
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //Harpy requires at least 1 of {Bounty Hunter, Cult Leader, Dreamer, Empath, Flowergirl, Fortune Teller, Gambler, Investigator, Juggler, Noble, Pixie, Sage, Seamstress, Shugenja, Town Crier, Tea Lady, Undertaker, Virgin, Moonchild, Puzzlemaster, Village Idiot}
             if (checkList.contains("Harpy")) {
                 if (checkList.contains("Bounty Hunter") || checkList.contains("Cult Leader") || checkList.contains("Dreamer") || checkList.contains("Empath") || checkList.contains("Flowergirl") || checkList.contains("Fortune Teller") || checkList.contains("Gambler") || checkList.contains("Investigator") || checkList.contains("Juggler") || checkList.contains("Noble") || checkList.contains("Pixie") || checkList.contains("Sage") || checkList.contains("Seamstress") || checkList.contains("Shugenja") || checkList.contains("Town Crier") || checkList.contains("Tea Lady") || checkList.contains("Undertaker") || checkList.contains("Virgin") || checkList.contains("Moonchild") || checkList.contains("Puzzlemaster") || checkList.contains("Village Idiot")){
