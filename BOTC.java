@@ -1192,7 +1192,7 @@ public class BOTC{
             if (checkList.contains("Boffin")) {
                 if (checkList.contains("Washerwoman") || checkList.contains("Librarian") || checkList.contains("Steward") || checkList.contains("Grandmother")) {
                     if (checkList.contains("Librarian")) {
-                        if (checkList.contains("Librarian") || checkList.contains("Librarian")) {
+                        if (checkList.contains("Damsel") || checkList.contains("Heretic")) {
                             continue;
                         } else {
                             it_works = true;
