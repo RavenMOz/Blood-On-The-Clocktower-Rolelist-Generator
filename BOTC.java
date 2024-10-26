@@ -708,6 +708,14 @@ public class BOTC{
                     continue;
                 }
             }
+            //Lycanthrope requires Vigormortis
+            if (checkList.contains("Lycanthrope")) {
+                if (checkList.contains("Vigormortis")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
             //Vizier can't have {Evil Twin, Goblin, Leviathan, Mastermind, Saint}
             if (checkList.contains("Vizier")) {
                 if (checkList.contains("Evil Twin") || checkList.contains("Goblin") || checkList.contains("Leviathan") || checkList.contains("Mastermind") || checkList.contains("Saint")) {
