@@ -329,16 +329,16 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 of {Mastermind, Po, Zombuul, Ojo, Summoner} requires at least 1 of {Soldier, Exorcist, Minstrel, Pit-Hag, Evil Twin} and vice versa
-            if (checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner")) {
+            //At least 1 of {{Al-Hadikhia & Minstrel}, Mastermind, Po, Zombuul, Ojo, Summoner} requires at least 1 of {Soldier, Exorcist, Minstrel, Pit-Hag, Evil Twin} and vice versa
+            if ((checkList.contains("Al-Hadikhia") && checkList.contains("Minstrell")) || checkList.contains("Mastermind") || checkList.contains("Po") || checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner")) {
                 if (checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel") || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")){
                     it_works = true;
                 } else {
                     continue;
                 }
             }
-            if ((checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel")) || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")) {
-                if (checkList.contains("Mastermind") || checkList.contains("Po")|| checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner")) {
+            if (checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel")) || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")) {
+                if ((checkList.contains("Al-Hadikhia") && checkList.contains("Minstrell")) || (checkList.contains("Mastermind") || checkList.contains("Po")|| checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner"))) {
                     it_works = true;
                 } else {
                     continue;
