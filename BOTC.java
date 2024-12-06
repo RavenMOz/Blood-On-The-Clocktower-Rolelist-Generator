@@ -11,7 +11,7 @@ public class BOTC{
         public static void main(String[] args) {
                 String[] townfolk = {"Alchemist", "Alsaahir", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker", "Zealot"};
-                String[] minion = {"Assassin", "Baron", "Boffin", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch"};
+                String[] minion = {"Assassin", "Baron", "Boffin", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch", "Xaan"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "Lord Of Typhon", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 int jinx_num;
                 String random_or_not = randomness("Do you want randomness(y or yes) or not(n or not)");
@@ -337,7 +337,7 @@ public class BOTC{
                     continue;
                 }
             }
-            if (checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel")) || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")) {
+            if ((checkList.contains("Soldier") || checkList.contains("Exorcist") || checkList.contains("Monk") || checkList.contains("Minstrel")) || checkList.contains("Pit-Hag") || checkList.contains("Evil Twin")) {
                 if ((checkList.contains("Al-Hadikhia") && checkList.contains("Minstrell")) || (checkList.contains("Mastermind") || checkList.contains("Po")|| checkList.contains("Zombuul") || checkList.contains("Ojo") || checkList.contains("Summoner"))) {
                     it_works = true;
                 } else {
@@ -548,8 +548,8 @@ public class BOTC{
                     continue;
                 }
             }
-            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali, Lord Of Typhon} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Ogre, Plague Doctor, Politician, Recluse, Snitch, Zealot}
-            if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather") || checkList.contains("Kazali") || checkList.contains("Lord Of Typhon")){
+            //At least 1 {Balloonist, Fang Gu, Godfather, Kazali, Lord Of Typhon, Xaan} requires at least 1 of {Damsel, Drunk, Goon, Lunatic, Ogre, Plague Doctor, Politician, Recluse, Snitch, Zealot}
+            if (checkList.contains("Balloonist") || checkList.contains("Fang Gu") || checkList.contains("Godfather") || checkList.contains("Kazali") || checkList.contains("Lord Of Typhon") || checkList.contains("Xaan")){
                 if (checkList.contains("Damsel") || checkList.contains("Drunk") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Ogre")  || checkList.contains("Plague Doctor") || checkList.contains("Politician") || checkList.contains("Recluse") || checkList.contains("Snitch") || checkList.contains("Hatter") || checkList.contains("Zealot")){
                     it_works = true;
                 } else {
@@ -607,9 +607,9 @@ public class BOTC{
             if (checkList.contains("Cult Leader") && checkList.contains("Goon")){
                 continue;
             }
-            // At least 1 of {Mathematican, Acrobat} requires at least 1 of {Courtier, Innkeeper, Minstrel, Philosopher, Sailor, Snake Charmer, Goon, Lunatic, Puzzlemaster, Sweetheart, Widow, Poisoner, Lleech, No Dashii, Pukka, Vigormortis, Vortox, Village Idiot}
+            // At least 1 of {Mathematican, Acrobat} requires at least 1 of {Courtier, Innkeeper, Minstrel, Philosopher, Sailor, Snake Charmer, Goon, Lunatic, Puzzlemaster, Sweetheart, Widow, Poisoner, Lleech, No Dashii, Pukka, Vigormortis, Vortox, Village Idiot, Xaan}
             if (checkList.contains("Mathematican") || checkList.contains("Acrobat")){
-                if (checkList.contains("Courtier") || checkList.contains("Innkeeper") || checkList.contains("Minstrel") || checkList.contains("Philosopher") || checkList.contains("Sailor") || checkList.contains("Snake Charmer") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Puzzlemaster") || checkList.contains("Sweetheart") || checkList.contains("Widow") || checkList.contains("Poisoner") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Pukka") || checkList.contains("Vigormortis") || checkList.contains("Vortox") || checkList.contains("Village Idiot")) {
+                if (checkList.contains("Courtier") || checkList.contains("Innkeeper") || checkList.contains("Minstrel") || checkList.contains("Philosopher") || checkList.contains("Sailor") || checkList.contains("Snake Charmer") || checkList.contains("Goon") || checkList.contains("Lunatic") || checkList.contains("Puzzlemaster") || checkList.contains("Sweetheart") || checkList.contains("Widow") || checkList.contains("Poisoner") || checkList.contains("Lleech") || checkList.contains("No Dashii") || checkList.contains("Pukka") || checkList.contains("Vigormortis") || checkList.contains("Vortox") || checkList.contains("Village Idiot") || checkList.contains("Xaan")) {
                     it_works = true;
                 } else {
                     continue;
@@ -1234,6 +1234,22 @@ public class BOTC{
             }
             if (checkList.contains("Boffin") && checkList.contains("Lil' Monsta")) {
                 if (checkList.contains("Alchemist")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Xaan requires at least 1 of {Balloonist, Godfather, Fang Gu, Kazali, Lord of Typhon}
+            if (checkList.contains("Xaan")) {
+                if (checkList.contains("Balloonist") || checkList.contains("Godfather") || checkList.contains("Fang Gu") || checkList.contains("Kazali") || checkList.contains("Lord of Typhon")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Xaan requires Minstrel
+            if (checkList.contains("Xaan")) {
+                if (checkList.contains("Minstral")) {
                     it_works = true;
                 } else {
                     continue;
