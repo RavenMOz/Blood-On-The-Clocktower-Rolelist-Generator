@@ -11,7 +11,7 @@ public class BOTC{
         public static void main(String[] args) {
                 String[] townfolk = {"Alchemist", "Alsaahir", "Amnesiac", "Artist", "Athiest", "Balloonist", "Banshee", "Bounty Hunter", "Cannibal", "Chambermaid", "Chef", "Choirboy", "Clockmaker", "Courtier", "Cult Leader", "Dreamer", "Empath", "Engineer", "Exorcist", "Farmer", "Fisherman", "Flowergirl", "Fool", "Fortune Teller", "Gambler", "General", "Gossip", "Grandmother", "High Priestess", "Huntsman", "Innkeeper", "Investigator", "Juggler", "King", "Knight", "Libriaran", "Lycanthrope", "Magician", "Mathematician", "Mayor", "Minstrel", "Monk", "Nightwatchman", "Noble", "Oracle", "Pacifist", "Philosopher", "Pixie", "Poppy Grower", "Preacher", "Professor", "Ravenkeeper", "Sage", "Sailor", "Savant", "Shugenja", "Seamstress", "Slayer", "Snake Charmer", "Soldier", "Steward", "Tea Lady", "Town Crier", "Undertaker", "Village Idiot", "Virgin", "Washerwoman"};
                 String[] outsider = {"Acrobat", "Barber", "Butler", "Damsel", "Drunk", "Golem", "Goon", "Hatter", "Heretic", "Klutz", "Lunatic", "Moonchild", "Mutant", "Ogre", "Plague Doctor", "Politician", "Puzzlemaster", "Recluse", "Saint", "Snitch", "Sweetheart", "Tinker", "Zealot"};
-                String[] minion = {"Assassin", "Baron", "Boffin", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch", "Xaan"};
+                String[] minion = {"Assassin", "Baron", "Boffin", "Boomdandy", "Cerenovus", "Devil's Advocate", "Evil Twin", "Fearmonger", "Goblin", "Godfather", "Harpy", "Marionette", "Mastermind", "Mezepheles", "Organ Grinder", "Pit-Hag", "Poisoner", "Psychopath", "Scarlett Woman", "Spy", "Summoner", "Vizier", "Widow", "Witch", "Wizard", "Xaan"};
                 String[] demon = {"Al-Hadikhia", "Fang Gu", "Imp", "Kazali", "Legion", "Leviathan", "Lil' Monsta", "Lleech", "Lord Of Typhon", "No Dashii", "Ojo", "Po", "Pukka", "Riot", "Shabaloth", "Vigormortis", "Vortox", "Yaggababble", "Zombuul"};
                 int jinx_num;
                 String random_or_not = randomness("Do you want randomness(y or yes) or not(n or not)");
@@ -1249,7 +1249,15 @@ public class BOTC{
             }
             //Xaan requires Minstrel
             if (checkList.contains("Xaan")) {
-                if (checkList.contains("Minstral")) {
+                if (checkList.contains("Minstrel")) {
+                    it_works = true;
+                } else {
+                    continue;
+                }
+            }
+            //Wizard requires at least 1 of {Amnesiac, Artist, Fisherman, Puzzlemaster, Savant}
+            if (checkList.contains("Xaan")) {
+                if (checkList.contains("Amnesiac") || checkList.contains("Artist") || checkList.contains("Fisherman") || checkList.contains("Puzzlemaster") || checkList.contains("Savant")) {
                     it_works = true;
                 } else {
                     continue;
